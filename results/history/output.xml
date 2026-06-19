@@ -1,0 +1,1422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.5 on win32)" generated="2026-06-19T11:22:13.060037" rpa="false" schemaversion="5">
+<suite id="s1" name="Booking History" source="D:\TestRobotFrameWork POM\tests\booking_history">
+<suite id="s1-s1" name="Booking History Basic Tests" source="D:\TestRobotFrameWork POM\tests\booking_history\booking_history_basic_tests.robot">
+<kw name="Open Browser To Application" owner="booking_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:22:13.454950" level="INFO">Opening browser 'chrome' to base url 'https://football-booking-system-seven.vercel.app/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:22:13.454386" elapsed="2.475240"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-19T11:22:15.930656" elapsed="0.034740"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>${OUTPUT DIR}${/}screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-06-19T11:22:15.965396" elapsed="0.002019"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Football Booking</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:22:15.967415" elapsed="0.044364"/>
+</kw>
+<doc>Mở browser và truy cập website</doc>
+<status status="PASS" start="2026-06-19T11:22:13.453061" elapsed="2.558718"/>
+</kw>
+<test id="s1-s1-t1" name="TC_HISTORY_SMOKE_01: Mở Website Thành Công" line="14">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Football Booking</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:22:16.013820" elapsed="0.016659"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:22:16.724260" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-19T11:22:16.030479" elapsed="0.693781"/>
+</kw>
+<doc>Kiểm tra website mở được và hiển thị trang chủ</doc>
+<tag>booking-history</tag>
+<tag>smoke</tag>
+<tag>website</tag>
+<status status="PASS" start="2026-06-19T11:22:16.011779" elapsed="0.713487"/>
+</test>
+<test id="s1-s1-t2" name="TC_HISTORY_SMOKE_02: Đăng Nhập Bằng Tài Khoản Hợp Lệ" line="20">
+<kw name="Login As Booking User" owner="booking_history_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:22:16.727549" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//login'</msg>
+<arg>${URL}/login</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:22:16.727549" elapsed="0.459731"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Đăng nhập</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:22:17.188130" elapsed="0.041656"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIELD_LOGIN_EMAIL}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:22:17.229786" elapsed="0.072989"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:22:17.302845" level="INFO">Typing text '04858758475' into text field 'xpath://input[@placeholder='name@example.com']'.</msg>
+<arg>${FIELD_LOGIN_EMAIL}</arg>
+<arg>${BOOKING_HISTORY_PHONE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:22:17.302845" elapsed="0.235628"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:22:17.539834" level="INFO">Typing text '12345' into text field 'xpath://input[@placeholder='Nhập mật khẩu']'.</msg>
+<arg>${FIELD_LOGIN_PASSWORD}</arg>
+<arg>${BOOKING_HISTORY_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:22:17.539834" elapsed="0.172784"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:22:17.712618" level="INFO">Clicking element 'xpath://button[contains(@class, 'login-button')]'.</msg>
+<arg>${BUTTON_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:22:17.712618" elapsed="0.137748"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:22:20.851087" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:22:17.850366" elapsed="3.000721"/>
+</kw>
+<doc>Đăng nhập bằng tài khoản có lịch sử đặt sân</doc>
+<status status="PASS" start="2026-06-19T11:22:16.727549" elapsed="4.123538"/>
+</kw>
+<kw name="Login Should Succeed And Redirect" owner="booking_history_keywords">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:22:21.112118" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-2.png"&gt;&lt;img src="screenshots/selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-19T11:22:21.112118" level="FAIL">UnexpectedAlertPresentException: Alert Text: Tài khoản không tồn tại
+Message: unexpected alert open: {Alert text : Tài khoản không tồn tại}
+  (Session info: chrome=149.0.7827.115)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff765783fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff765784000+14980]
+	chromedriver!(No symbol) [0x7ff7652c793d]
+	chromedriver!(No symbol) [0x7ff76536fe3d]
+	chromedriver!(No symbol) [0x7ff76531401c]
+	chromedriver!(No symbol) [0x7ff765314f43]
+	chromedriver!GetHandleVerifier [0x7ff765d67591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff765d61902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff765d87115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff7657a1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff7657aa82c+3b1ac]
+	chromedriver!GetHandleVerifier [0x7ff76578d744+1e0c4]
+	chromedriver!GetHandleVerifier [0x7ff76578d8d4+1e254]
+	chromedriver!GetHandleVerifier [0x7ff765771447+1dc7]
+	KERNEL32!BaseThreadInitThunk [0x7ffa7aa5259d+1d]
+	ntdll!RtlUserThreadStart [0x7ffa7b8aaf78+28]
+</msg>
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="FAIL" start="2026-06-19T11:22:20.851087" elapsed="0.285181">UnexpectedAlertPresentException: Alert Text: Tài khoản không tồn tại
+Message: unexpected alert open: {Alert text : Tài khoản không tồn tại}
+  (Session info: chrome=149.0.7827.115)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff765783fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff765784000+14980]
+	chromedriver!(No symbol) [0x7ff7652c793d]
+	chromedriver!(No symbol) [0x7ff76536fe3d]
+	chromedriver!(No symbol) [0x7ff76531401c]
+	chromedriver!(No symbol) [0x7ff765314f43]
+	chromedriver!GetHandleVerifier [0x7ff765d67591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff765d61902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff765d87115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff7657a1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff7657aa82c+3b1ac]
+	chromedriver!GetHandleVerifier [0x7ff76578d744+1e0c4]
+	chromedriver!GetHandleVerifier [0x7ff76578d8d4+1e254]
+	chromedriver!GetHandleVerifier [0x7ff765771447+1dc7]
+	KERNEL32!BaseThreadInitThunk [0x7ffa7aa5259d+1d]
+	ntdll!RtlUserThreadStart [0x7ffa7b8aaf78+28]
+</status>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${current_url}</arg>
+<arg>/login</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2026-06-19T11:22:21.137300" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra đăng nhập thành công và chuyển trang</doc>
+<status status="FAIL" start="2026-06-19T11:22:20.851087" elapsed="0.286213">UnexpectedAlertPresentException: Alert Text: Tài khoản không tồn tại
+Message: unexpected alert open: {Alert text : Tài khoản không tồn tại}
+  (Session info: chrome=149.0.7827.115)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff765783fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff765784000+14980]
+	chromedriver!(No symbol) [0x7ff7652c793d]
+	chromedriver!(No symbol) [0x7ff76536fe3d]
+	chromedriver!(No symbol) [0x7ff76531401c]
+	chromedriver!(No symbol) [0x7ff765314f43]
+	chromedriver!GetHandleVerifier [0x7ff765d67591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff765d61902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff765d87115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff7657a1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff7657aa82c+3b1ac]
+	chromedriver!GetHandleVerifier [0x7ff76578d744+1e0c4]
+	chromedriver!GetHandleVerifier [0x7ff76578d8d4+1e254]
+	chromedriver!GetHandleVerifier [0x7ff765771447+1dc7]
+	KERNEL32!BaseThreadInitThunk [0x7ffa7aa5259d+1d]
+	ntdll!RtlUserThreadStart [0x7ffa7b8aaf78+28]
+</status>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-06-19T11:22:21.137300" elapsed="0.000000"/>
+</kw>
+<doc>Đăng nhập bằng SĐT 04858758475 / pass 12345</doc>
+<tag>booking-history</tag>
+<tag>login</tag>
+<tag>smoke</tag>
+<status status="FAIL" start="2026-06-19T11:22:16.725266" elapsed="4.413259">UnexpectedAlertPresentException: Alert Text: Tài khoản không tồn tại
+Message: unexpected alert open: {Alert text : Tài khoản không tồn tại}
+  (Session info: chrome=149.0.7827.115)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff765783fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff765784000+14980]
+	chromedriver!(No symbol) [0x7ff7652c793d]
+	chromedriver!(No symbol) [0x7ff76536fe3d]
+	chromedriver!(No symbol) [0x7ff76531401c]
+	chromedriver!(No symbol) [0x7ff765314f43]
+	chromedriver!GetHandleVerifier [0x7ff765d67591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff765d61902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff765d87115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff7657a1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff7657aa82c+3b1ac]
+	chromedriver!GetHandleVerifier [0x7ff76578d744+1e0c4]
+	chromedriver!GetHandleVerifier [0x7ff76578d8d4+1e254]
+	chromedriver!GetHandleVerifier [0x7ff765771447+1dc7]
+	KERNEL32!BaseThreadInitThunk [0x7ffa7aa5259d+1d]
+	ntdll!RtlUserThreadStart [0x7ffa7b8aaf78+28]
+</status>
+</test>
+<test id="s1-s1-t3" name="TC_HISTORY_SMOKE_03: Điều Hướng Tới Trang Lịch Sử Đặt Sân" line="27">
+<kw name="Navigate To My Bookings Page" owner="booking_history_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:22:21.140588" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//my-bookings'</msg>
+<arg>${URL}/my-bookings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:22:21.140588" elapsed="0.387009"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:22:23.529312" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:22:21.529054" elapsed="2.000258"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch sử đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:22:23.529865" elapsed="0.023088"/>
+</kw>
+<doc>Điều hướng tới trang Lịch sử đặt sân (yêu cầu đã đăng nhập)</doc>
+<status status="PASS" start="2026-06-19T11:22:21.140588" elapsed="2.412365"/>
+</kw>
+<kw name="Booking History Page Should Be Displayed" owner="booking_history_keywords">
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:22:23.566580" level="INFO">Current location contains 'my-bookings'.</msg>
+<arg>my-bookings</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-06-19T11:22:23.552953" elapsed="0.013627"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:22:23.585058" level="INFO">Current page contains text 'Lịch sử đặt sân'.</msg>
+<arg>Lịch sử đặt sân</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-19T11:22:23.566580" elapsed="0.018478"/>
+</kw>
+<doc>Kiểm tra trang Lịch sử đặt sân hiển thị đúng</doc>
+<status status="PASS" start="2026-06-19T11:22:23.552953" elapsed="0.032105"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:22:23.702816" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-3.png"&gt;&lt;img src="screenshots/selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-19T11:22:23.587566" elapsed="0.115250"/>
+</kw>
+<doc>Vào trang Lịch sử đặt sân sau khi đã đăng nhập</doc>
+<tag>booking-history</tag>
+<tag>navigation</tag>
+<tag>smoke</tag>
+<status status="PASS" start="2026-06-19T11:22:21.139752" elapsed="2.563573"/>
+</test>
+<test id="s1-s1-t4" name="TC_HISTORY_SMOKE_04: Trang Lịch Sử Có Xuất Hiện Đơn Đặt Sân" line="34">
+<kw name="Navigate To My Bookings Page" owner="booking_history_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:22:23.705223" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//my-bookings'</msg>
+<arg>${URL}/my-bookings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:22:23.705223" elapsed="0.412920"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:22:26.118500" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:22:24.118143" elapsed="2.000870"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch sử đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:22:26.119079" elapsed="0.016537"/>
+</kw>
+<doc>Điều hướng tới trang Lịch sử đặt sân (yêu cầu đã đăng nhập)</doc>
+<status status="PASS" start="2026-06-19T11:22:23.705223" elapsed="2.430393"/>
+</kw>
+<kw name="Booking Orders Should Be Visible" owner="booking_history_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:22:36.406702" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-4.png"&gt;&lt;img src="screenshots/selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-19T11:22:36.406702" level="FAIL">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</msg>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-06-19T11:22:26.137637" elapsed="10.271199">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${count}</var>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:22:36.408836" elapsed="0.001045"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt; 0</arg>
+<arg>msg=Không tìm thấy đơn đặt sân nào trong lịch sử</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2026-06-19T11:22:36.409881" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra có ít nhất 1 đơn đặt sân hiển thị</doc>
+<status status="FAIL" start="2026-06-19T11:22:26.135616" elapsed="10.274265">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-06-19T11:22:36.409881" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra có ít nhất 1 đơn đặt sân được hiển thị</doc>
+<tag>booking-history</tag>
+<tag>orders</tag>
+<tag>smoke</tag>
+<status status="FAIL" start="2026-06-19T11:22:23.703325" elapsed="12.708034">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</test>
+<test id="s1-s1-t5" name="TC_HISTORY_SMOKE_05: Đơn Đặt Sân Hiển Thị Tên Sân" line="41">
+<kw name="Navigate To My Bookings Page" owner="booking_history_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:22:36.417187" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//my-bookings'</msg>
+<arg>${URL}/my-bookings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:22:36.416154" elapsed="0.660203"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:22:39.078788" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:22:37.077392" elapsed="2.001930"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch sử đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:22:39.079847" elapsed="0.018080"/>
+</kw>
+<doc>Điều hướng tới trang Lịch sử đặt sân (yêu cầu đã đăng nhập)</doc>
+<status status="PASS" start="2026-06-19T11:22:36.416154" elapsed="2.682789"/>
+</kw>
+<kw name="Booking Orders Should Be Visible" owner="booking_history_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:22:49.366877" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-5.png"&gt;&lt;img src="screenshots/selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-19T11:22:49.368403" level="FAIL">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</msg>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-06-19T11:22:39.099946" elapsed="10.270004">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${count}</var>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:22:49.370604" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt; 0</arg>
+<arg>msg=Không tìm thấy đơn đặt sân nào trong lịch sử</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2026-06-19T11:22:49.370604" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra có ít nhất 1 đơn đặt sân hiển thị</doc>
+<status status="FAIL" start="2026-06-19T11:22:39.098943" elapsed="10.272705">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Booking History Should Show Field Name" owner="booking_history_keywords">
+<doc>Kiểm tra tên sân hiển thị trong đơn đặt sân</doc>
+<status status="NOT RUN" start="2026-06-19T11:22:49.372672" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra cột/trường tên sân có nội dung</doc>
+<tag>booking-history</tag>
+<tag>field-name</tag>
+<tag>smoke</tag>
+<status status="FAIL" start="2026-06-19T11:22:36.414079" elapsed="12.959640">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</test>
+<test id="s1-s1-t6" name="TC_HISTORY_SMOKE_06: Đơn Đặt Sân Hiển Thị Ngày Đặt" line="48">
+<kw name="Navigate To My Bookings Page" owner="booking_history_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:22:49.378181" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//my-bookings'</msg>
+<arg>${URL}/my-bookings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:22:49.378181" elapsed="0.480365"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:22:51.859074" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:22:49.858546" elapsed="2.000528"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch sử đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:22:51.859074" elapsed="0.017670"/>
+</kw>
+<doc>Điều hướng tới trang Lịch sử đặt sân (yêu cầu đã đăng nhập)</doc>
+<status status="PASS" start="2026-06-19T11:22:49.376893" elapsed="2.499851"/>
+</kw>
+<kw name="Booking Orders Should Be Visible" owner="booking_history_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:02.150027" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-6.png"&gt;&lt;img src="screenshots/selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-19T11:23:02.150027" level="FAIL">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</msg>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-06-19T11:22:51.877767" elapsed="10.273199">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${count}</var>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:23:02.150966" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt; 0</arg>
+<arg>msg=Không tìm thấy đơn đặt sân nào trong lịch sử</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2026-06-19T11:23:02.150966" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra có ít nhất 1 đơn đặt sân hiển thị</doc>
+<status status="FAIL" start="2026-06-19T11:22:51.877767" elapsed="10.273199">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Booking History Should Show Booking Date" owner="booking_history_keywords">
+<doc>Kiểm tra ngày đặt hiển thị trong đơn đặt sân</doc>
+<status status="NOT RUN" start="2026-06-19T11:23:02.152446" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra cột/trường ngày đặt có nội dung</doc>
+<tag>booking-history</tag>
+<tag>date</tag>
+<tag>smoke</tag>
+<status status="FAIL" start="2026-06-19T11:22:49.375244" elapsed="12.777716">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</test>
+<test id="s1-s1-t7" name="TC_HISTORY_SMOKE_07: Đơn Đặt Sân Hiển Thị Khung Giờ" line="55">
+<kw name="Navigate To My Bookings Page" owner="booking_history_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:02.155379" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//my-bookings'</msg>
+<arg>${URL}/my-bookings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:23:02.155379" elapsed="0.598139"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:23:04.754748" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:23:02.753518" elapsed="2.001230"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch sử đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:23:04.754748" elapsed="0.030896"/>
+</kw>
+<doc>Điều hướng tới trang Lịch sử đặt sân (yêu cầu đã đăng nhập)</doc>
+<status status="PASS" start="2026-06-19T11:23:02.155379" elapsed="2.630265"/>
+</kw>
+<kw name="Booking Orders Should Be Visible" owner="booking_history_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:15.047617" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-7.png"&gt;&lt;img src="screenshots/selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-19T11:23:15.048629" level="FAIL">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</msg>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-06-19T11:23:04.785644" elapsed="10.262985">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${count}</var>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:23:15.048629" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt; 0</arg>
+<arg>msg=Không tìm thấy đơn đặt sân nào trong lịch sử</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2026-06-19T11:23:15.048629" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra có ít nhất 1 đơn đặt sân hiển thị</doc>
+<status status="FAIL" start="2026-06-19T11:23:04.785644" elapsed="10.262985">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Booking History Should Show Time Slot" owner="booking_history_keywords">
+<doc>Kiểm tra khung giờ hiển thị trong đơn đặt sân</doc>
+<status status="NOT RUN" start="2026-06-19T11:23:15.050446" elapsed="0.000118"/>
+</kw>
+<doc>Kiểm tra cột/trường khung giờ có nội dung</doc>
+<tag>booking-history</tag>
+<tag>smoke</tag>
+<tag>time-slot</tag>
+<status status="FAIL" start="2026-06-19T11:23:02.152960" elapsed="12.897604">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</test>
+<test id="s1-s1-t8" name="TC_HISTORY_SMOKE_08: Đơn Đặt Sân Hiển Thị Trạng Thái" line="62">
+<kw name="Navigate To My Bookings Page" owner="booking_history_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:15.054278" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//my-bookings'</msg>
+<arg>${URL}/my-bookings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:23:15.054278" elapsed="0.342992"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:23:17.398705" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:23:15.397942" elapsed="2.000763"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch sử đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:23:17.398705" elapsed="0.020017"/>
+</kw>
+<doc>Điều hướng tới trang Lịch sử đặt sân (yêu cầu đã đăng nhập)</doc>
+<status status="PASS" start="2026-06-19T11:23:15.052774" elapsed="2.366468"/>
+</kw>
+<kw name="Booking Orders Should Be Visible" owner="booking_history_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:27.687608" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-8.png"&gt;&lt;img src="screenshots/selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-19T11:23:27.687608" level="FAIL">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</msg>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-06-19T11:23:17.420495" elapsed="10.268278">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${count}</var>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:23:27.688773" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt; 0</arg>
+<arg>msg=Không tìm thấy đơn đặt sân nào trong lịch sử</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2026-06-19T11:23:27.688773" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra có ít nhất 1 đơn đặt sân hiển thị</doc>
+<status status="FAIL" start="2026-06-19T11:23:17.419477" elapsed="10.269296">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Booking History Should Show Status" owner="booking_history_keywords">
+<doc>Kiểm tra trạng thái hiển thị trong đơn đặt sân</doc>
+<status status="NOT RUN" start="2026-06-19T11:23:27.689956" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra cột/trường trạng thái có nội dung</doc>
+<tag>booking-history</tag>
+<tag>smoke</tag>
+<tag>status</tag>
+<status status="FAIL" start="2026-06-19T11:23:15.051765" elapsed="12.639049">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</test>
+<kw name="Close Browser Application" owner="booking_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-19T11:23:27.692189" elapsed="2.263487"/>
+</kw>
+<doc>Đóng browser</doc>
+<status status="PASS" start="2026-06-19T11:23:27.692189" elapsed="2.264007"/>
+</kw>
+<doc>Smoke Tests - Kiểm tra Lịch sử đặt sân
+Luồng: Mở website → Đăng nhập → Vào Lịch sử đặt sân → Kiểm tra đơn đặt sân</doc>
+<status status="FAIL" start="2026-06-19T11:22:13.090151" elapsed="76.866045"/>
+</suite>
+<suite id="s1-s2" name="Booking History Tests" source="D:\TestRobotFrameWork POM\tests\booking_history\booking_history_tests.robot">
+<kw name="Open Browser To Application" owner="booking_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:29.980236" level="INFO">Opening browser 'chrome' to base url 'https://football-booking-system-seven.vercel.app/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:23:29.980236" elapsed="2.997625"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-19T11:23:32.977861" elapsed="0.053043"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>${OUTPUT DIR}${/}screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-06-19T11:23:33.031424" elapsed="0.001027"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Football Booking</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:23:33.032451" elapsed="0.062824"/>
+</kw>
+<doc>Mở browser và truy cập website</doc>
+<status status="PASS" start="2026-06-19T11:23:29.979693" elapsed="3.115696"/>
+</kw>
+<test id="s1-s2-t1" name="TC_HISTORY_REG_01: Toàn Bộ Luồng Mở Website Và Đăng Nhập" line="16">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Football Booking</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:23:33.097685" elapsed="0.036103"/>
+</kw>
+<kw name="Login As Booking User" owner="booking_history_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:33.137316" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//login'</msg>
+<arg>${URL}/login</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:23:33.135793" elapsed="0.495057"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Đăng nhập</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:23:33.631875" elapsed="0.027399"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIELD_LOGIN_EMAIL}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:23:33.659885" elapsed="0.067336"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:33.728210" level="INFO">Typing text '04858758475' into text field 'xpath://input[@placeholder='name@example.com']'.</msg>
+<arg>${FIELD_LOGIN_EMAIL}</arg>
+<arg>${BOOKING_HISTORY_PHONE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:23:33.727221" elapsed="0.286905"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:34.014126" level="INFO">Typing text '12345' into text field 'xpath://input[@placeholder='Nhập mật khẩu']'.</msg>
+<arg>${FIELD_LOGIN_PASSWORD}</arg>
+<arg>${BOOKING_HISTORY_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:23:34.014126" elapsed="0.162448"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:34.179094" level="INFO">Clicking element 'xpath://button[contains(@class, 'login-button')]'.</msg>
+<arg>${BUTTON_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:23:34.179094" elapsed="0.151816"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:23:37.331301" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:23:34.330910" elapsed="3.000391"/>
+</kw>
+<doc>Đăng nhập bằng tài khoản có lịch sử đặt sân</doc>
+<status status="PASS" start="2026-06-19T11:23:33.134796" elapsed="4.196505"/>
+</kw>
+<kw name="Login Should Succeed And Redirect" owner="booking_history_keywords">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:37.599999" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-9.png"&gt;&lt;img src="screenshots/selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-19T11:23:37.599999" level="FAIL">UnexpectedAlertPresentException: Alert Text: Tài khoản không tồn tại
+Message: unexpected alert open: {Alert text : Tài khoản không tồn tại}
+  (Session info: chrome=149.0.7827.115)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff765783fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff765784000+14980]
+	chromedriver!(No symbol) [0x7ff7652c793d]
+	chromedriver!(No symbol) [0x7ff76536fe3d]
+	chromedriver!(No symbol) [0x7ff76531401c]
+	chromedriver!(No symbol) [0x7ff765314f43]
+	chromedriver!GetHandleVerifier [0x7ff765d67591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff765d61902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff765d87115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff7657a1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff7657aa82c+3b1ac]
+	chromedriver!GetHandleVerifier [0x7ff76578d744+1e0c4]
+	chromedriver!GetHandleVerifier [0x7ff76578d8d4+1e254]
+	chromedriver!GetHandleVerifier [0x7ff765771447+1dc7]
+	KERNEL32!BaseThreadInitThunk [0x7ffa7aa5259d+1d]
+	ntdll!RtlUserThreadStart [0x7ffa7b8aaf78+28]
+</msg>
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="FAIL" start="2026-06-19T11:23:37.331301" elapsed="0.269535">UnexpectedAlertPresentException: Alert Text: Tài khoản không tồn tại
+Message: unexpected alert open: {Alert text : Tài khoản không tồn tại}
+  (Session info: chrome=149.0.7827.115)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff765783fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff765784000+14980]
+	chromedriver!(No symbol) [0x7ff7652c793d]
+	chromedriver!(No symbol) [0x7ff76536fe3d]
+	chromedriver!(No symbol) [0x7ff76531401c]
+	chromedriver!(No symbol) [0x7ff765314f43]
+	chromedriver!GetHandleVerifier [0x7ff765d67591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff765d61902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff765d87115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff7657a1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff7657aa82c+3b1ac]
+	chromedriver!GetHandleVerifier [0x7ff76578d744+1e0c4]
+	chromedriver!GetHandleVerifier [0x7ff76578d8d4+1e254]
+	chromedriver!GetHandleVerifier [0x7ff765771447+1dc7]
+	KERNEL32!BaseThreadInitThunk [0x7ffa7aa5259d+1d]
+	ntdll!RtlUserThreadStart [0x7ffa7b8aaf78+28]
+</status>
+</kw>
+<kw name="Should Not Contain" owner="BuiltIn">
+<arg>${current_url}</arg>
+<arg>/login</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2026-06-19T11:23:37.600836" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra đăng nhập thành công và chuyển trang</doc>
+<status status="FAIL" start="2026-06-19T11:23:37.331301" elapsed="0.269535">UnexpectedAlertPresentException: Alert Text: Tài khoản không tồn tại
+Message: unexpected alert open: {Alert text : Tài khoản không tồn tại}
+  (Session info: chrome=149.0.7827.115)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff765783fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff765784000+14980]
+	chromedriver!(No symbol) [0x7ff7652c793d]
+	chromedriver!(No symbol) [0x7ff76536fe3d]
+	chromedriver!(No symbol) [0x7ff76531401c]
+	chromedriver!(No symbol) [0x7ff765314f43]
+	chromedriver!GetHandleVerifier [0x7ff765d67591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff765d61902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff765d87115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff7657a1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff7657aa82c+3b1ac]
+	chromedriver!GetHandleVerifier [0x7ff76578d744+1e0c4]
+	chromedriver!GetHandleVerifier [0x7ff76578d8d4+1e254]
+	chromedriver!GetHandleVerifier [0x7ff765771447+1dc7]
+	KERNEL32!BaseThreadInitThunk [0x7ffa7aa5259d+1d]
+	ntdll!RtlUserThreadStart [0x7ffa7b8aaf78+28]
+</status>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-06-19T11:23:37.601847" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra website mở được và đăng nhập thành công với tài khoản 04858758475</doc>
+<tag>booking-history</tag>
+<tag>login</tag>
+<tag>regression</tag>
+<tag>smoke</tag>
+<status status="FAIL" start="2026-06-19T11:23:33.095389" elapsed="4.506458">UnexpectedAlertPresentException: Alert Text: Tài khoản không tồn tại
+Message: unexpected alert open: {Alert text : Tài khoản không tồn tại}
+  (Session info: chrome=149.0.7827.115)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff765783fa5+14925]
+	chromedriver!GetHandleVerifier [0x7ff765784000+14980]
+	chromedriver!(No symbol) [0x7ff7652c793d]
+	chromedriver!(No symbol) [0x7ff76536fe3d]
+	chromedriver!(No symbol) [0x7ff76531401c]
+	chromedriver!(No symbol) [0x7ff765314f43]
+	chromedriver!GetHandleVerifier [0x7ff765d67591+5f7f11]
+	chromedriver!GetHandleVerifier [0x7ff765d61902+5f2282]
+	chromedriver!GetHandleVerifier [0x7ff765d87115+617a95]
+	chromedriver!GetHandleVerifier [0x7ff7657a1dce+3274e]
+	chromedriver!GetHandleVerifier [0x7ff7657aa82c+3b1ac]
+	chromedriver!GetHandleVerifier [0x7ff76578d744+1e0c4]
+	chromedriver!GetHandleVerifier [0x7ff76578d8d4+1e254]
+	chromedriver!GetHandleVerifier [0x7ff765771447+1dc7]
+	KERNEL32!BaseThreadInitThunk [0x7ffa7aa5259d+1d]
+	ntdll!RtlUserThreadStart [0x7ffa7b8aaf78+28]
+</status>
+</test>
+<test id="s1-s2-t2" name="TC_HISTORY_REG_02: Trang Lịch Sử Đặt Sân Hiển Thị Sau Đăng Nhập" line="24">
+<kw name="Navigate To My Bookings Page" owner="booking_history_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:37.604419" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//my-bookings'</msg>
+<arg>${URL}/my-bookings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:23:37.604419" elapsed="0.440999"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:23:40.047841" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:23:38.046132" elapsed="2.001709"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch sử đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:23:40.047841" elapsed="0.056069"/>
+</kw>
+<doc>Điều hướng tới trang Lịch sử đặt sân (yêu cầu đã đăng nhập)</doc>
+<status status="PASS" start="2026-06-19T11:23:37.604419" elapsed="2.500516"/>
+</kw>
+<kw name="Booking History Page Should Be Displayed" owner="booking_history_keywords">
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:40.138420" level="INFO">Current location contains 'my-bookings'.</msg>
+<arg>my-bookings</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-06-19T11:23:40.107017" elapsed="0.031403"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:40.168327" level="INFO">Current page contains text 'Lịch sử đặt sân'.</msg>
+<arg>Lịch sử đặt sân</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-19T11:23:40.138420" elapsed="0.029907"/>
+</kw>
+<doc>Kiểm tra trang Lịch sử đặt sân hiển thị đúng</doc>
+<status status="PASS" start="2026-06-19T11:23:40.104935" elapsed="0.063392"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:40.215193" level="INFO">Current page contains text 'Lịch sử đặt sân'.</msg>
+<arg>Lịch sử đặt sân</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-19T11:23:40.169375" elapsed="0.047338"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:40.427596" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-10.png"&gt;&lt;img src="screenshots/selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-19T11:23:40.217742" elapsed="0.211374"/>
+</kw>
+<doc>Kiểm tra điều hướng thành công tới /my-bookings và trang hiển thị đúng tiêu đề</doc>
+<tag>booking-history</tag>
+<tag>navigation</tag>
+<tag>regression</tag>
+<status status="PASS" start="2026-06-19T11:23:37.603387" elapsed="2.826279"/>
+</test>
+<test id="s1-s2-t3" name="TC_HISTORY_REG_03: Danh Sách Đơn Đặt Sân Không Trống" line="32">
+<kw name="Navigate To My Bookings Page" owner="booking_history_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:40.432513" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//my-bookings'</msg>
+<arg>${URL}/my-bookings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:23:40.432513" elapsed="0.403940"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:23:42.837710" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:23:40.836453" elapsed="2.001257"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch sử đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:23:42.837710" elapsed="0.017081"/>
+</kw>
+<doc>Điều hướng tới trang Lịch sử đặt sân (yêu cầu đã đăng nhập)</doc>
+<status status="PASS" start="2026-06-19T11:23:40.431189" elapsed="2.423602"/>
+</kw>
+<kw name="Booking History Should Have Items" owner="booking_history_keywords">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:42.876208" level="INFO">${items} = []</msg>
+<var>${items}</var>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:23:42.854791" elapsed="0.021581"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-06-19T11:23:42.876567" level="INFO">Length is 0.</msg>
+<msg time="2026-06-19T11:23:42.876567" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${items}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-06-19T11:23:42.876567" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<msg time="2026-06-19T11:23:42.876567" level="FAIL">Danh sách lịch sử đặt sân trống</msg>
+<arg>${count} &gt; 0</arg>
+<arg>msg=Danh sách lịch sử đặt sân trống</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="FAIL" start="2026-06-19T11:23:42.876567" elapsed="0.000000">Danh sách lịch sử đặt sân trống</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Tìm thấy ${count} đơn đặt sân trong lịch sử</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-06-19T11:23:42.876567" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra danh sách lịch sử đặt sân không trống</doc>
+<status status="FAIL" start="2026-06-19T11:23:42.854791" elapsed="0.022803">Danh sách lịch sử đặt sân trống</status>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-06-19T11:23:42.877594" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra trang hiển thị ít nhất 1 đơn đặt sân - không được hiển thị trang trống</doc>
+<tag>booking-history</tag>
+<tag>orders</tag>
+<tag>regression</tag>
+<status status="FAIL" start="2026-06-19T11:23:40.430681" elapsed="2.446913">Danh sách lịch sử đặt sân trống</status>
+</test>
+<test id="s1-s2-t4" name="TC_HISTORY_REG_04: Tất Cả Đơn Đặt Sân Có Tên Sân" line="39">
+<kw name="Navigate To My Bookings Page" owner="booking_history_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:42.879677" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//my-bookings'</msg>
+<arg>${URL}/my-bookings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:23:42.879677" elapsed="0.501566"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:23:45.382902" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:23:43.381243" elapsed="2.001659"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch sử đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:23:45.382902" elapsed="0.031150"/>
+</kw>
+<doc>Điều hướng tới trang Lịch sử đặt sân (yêu cầu đã đăng nhập)</doc>
+<status status="PASS" start="2026-06-19T11:23:42.879677" elapsed="2.534896"/>
+</kw>
+<kw name="Booking Orders Should Be Visible" owner="booking_history_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:55.559778" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-11.png"&gt;&lt;img src="screenshots/selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-19T11:23:55.559778" level="FAIL">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</msg>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-06-19T11:23:45.415589" elapsed="10.145067">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${count}</var>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:23:55.560656" elapsed="0.001004"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt; 0</arg>
+<arg>msg=Không tìm thấy đơn đặt sân nào trong lịch sử</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2026-06-19T11:23:55.561660" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra có ít nhất 1 đơn đặt sân hiển thị</doc>
+<status status="FAIL" start="2026-06-19T11:23:45.415589" elapsed="10.146071">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="All Booking Items Should Have Field Name" owner="booking_history_keywords">
+<doc>Kiểm tra tất cả đơn đặt sân đều có tên sân</doc>
+<status status="NOT RUN" start="2026-06-19T11:23:55.561660" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra từng đơn đặt sân đều hiển thị tên sân, không được để trống</doc>
+<tag>booking-history</tag>
+<tag>field-name</tag>
+<tag>regression</tag>
+<status status="FAIL" start="2026-06-19T11:23:42.879149" elapsed="12.682511">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</test>
+<test id="s1-s2-t5" name="TC_HISTORY_REG_05: Tất Cả Đơn Đặt Sân Có Ngày Đặt" line="46">
+<kw name="Navigate To My Bookings Page" owner="booking_history_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:23:55.564715" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//my-bookings'</msg>
+<arg>${URL}/my-bookings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:23:55.564715" elapsed="0.450416"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:23:58.016857" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:23:56.016661" elapsed="2.000196"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch sử đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:23:58.016857" elapsed="0.016366"/>
+</kw>
+<doc>Điều hướng tới trang Lịch sử đặt sân (yêu cầu đã đăng nhập)</doc>
+<status status="PASS" start="2026-06-19T11:23:55.564715" elapsed="2.468508"/>
+</kw>
+<kw name="Booking Orders Should Be Visible" owner="booking_history_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:24:08.226384" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-12.png"&gt;&lt;img src="screenshots/selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-19T11:24:08.226384" level="FAIL">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</msg>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-06-19T11:23:58.034285" elapsed="10.194611">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${count}</var>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:24:08.228896" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt; 0</arg>
+<arg>msg=Không tìm thấy đơn đặt sân nào trong lịch sử</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2026-06-19T11:24:08.229923" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra có ít nhất 1 đơn đặt sân hiển thị</doc>
+<status status="FAIL" start="2026-06-19T11:23:58.033223" elapsed="10.196700">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="All Booking Items Should Have Date" owner="booking_history_keywords">
+<doc>Kiểm tra tất cả đơn đặt sân đều có ngày đặt</doc>
+<status status="NOT RUN" start="2026-06-19T11:24:08.230448" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra từng đơn đặt sân đều hiển thị ngày đặt, không được để trống</doc>
+<tag>booking-history</tag>
+<tag>date</tag>
+<tag>regression</tag>
+<status status="FAIL" start="2026-06-19T11:23:55.563163" elapsed="12.667285">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</test>
+<test id="s1-s2-t6" name="TC_HISTORY_REG_06: Tất Cả Đơn Đặt Sân Có Khung Giờ" line="53">
+<kw name="Navigate To My Bookings Page" owner="booking_history_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:24:08.233491" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//my-bookings'</msg>
+<arg>${URL}/my-bookings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:24:08.233491" elapsed="0.431292"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:24:10.665364" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:24:08.664783" elapsed="2.000581"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch sử đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:24:10.665364" elapsed="0.018867"/>
+</kw>
+<doc>Điều hướng tới trang Lịch sử đặt sân (yêu cầu đã đăng nhập)</doc>
+<status status="PASS" start="2026-06-19T11:24:08.230448" elapsed="2.453783"/>
+</kw>
+<kw name="Booking Orders Should Be Visible" owner="booking_history_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:24:20.976391" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-13.png"&gt;&lt;img src="screenshots/selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-19T11:24:20.976391" level="FAIL">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</msg>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-06-19T11:24:10.684231" elapsed="10.292160">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${count}</var>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:24:20.976391" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt; 0</arg>
+<arg>msg=Không tìm thấy đơn đặt sân nào trong lịch sử</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2026-06-19T11:24:20.976391" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra có ít nhất 1 đơn đặt sân hiển thị</doc>
+<status status="FAIL" start="2026-06-19T11:24:10.684231" elapsed="10.292160">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="All Booking Items Should Have Time Slot" owner="booking_history_keywords">
+<doc>Kiểm tra tất cả đơn đặt sân đều có khung giờ</doc>
+<status status="NOT RUN" start="2026-06-19T11:24:20.976391" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra từng đơn đặt sân đều hiển thị khung giờ, không được để trống</doc>
+<tag>booking-history</tag>
+<tag>regression</tag>
+<tag>time-slot</tag>
+<status status="FAIL" start="2026-06-19T11:24:08.230448" elapsed="12.748993">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</test>
+<test id="s1-s2-t7" name="TC_HISTORY_REG_07: Tất Cả Đơn Đặt Sân Có Trạng Thái" line="60">
+<kw name="Navigate To My Bookings Page" owner="booking_history_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:24:20.980545" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//my-bookings'</msg>
+<arg>${URL}/my-bookings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:24:20.980545" elapsed="0.394805"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:24:23.375905" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:24:21.375350" elapsed="2.000555"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch sử đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:24:23.376454" elapsed="0.018191"/>
+</kw>
+<doc>Điều hướng tới trang Lịch sử đặt sân (yêu cầu đã đăng nhập)</doc>
+<status status="PASS" start="2026-06-19T11:24:20.980545" elapsed="2.414100"/>
+</kw>
+<kw name="Booking Orders Should Be Visible" owner="booking_history_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:24:33.579832" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-14.png"&gt;&lt;img src="screenshots/selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-19T11:24:33.579832" level="FAIL">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</msg>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-06-19T11:24:23.395286" elapsed="10.185701">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${count}</var>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:24:33.580987" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt; 0</arg>
+<arg>msg=Không tìm thấy đơn đặt sân nào trong lịch sử</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2026-06-19T11:24:33.580987" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra có ít nhất 1 đơn đặt sân hiển thị</doc>
+<status status="FAIL" start="2026-06-19T11:24:23.395286" elapsed="10.185701">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="All Booking Items Should Have Status" owner="booking_history_keywords">
+<doc>Kiểm tra tất cả đơn đặt sân đều có trạng thái</doc>
+<status status="NOT RUN" start="2026-06-19T11:24:33.580987" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra từng đơn đặt sân đều hiển thị trạng thái, không được để trống</doc>
+<tag>booking-history</tag>
+<tag>regression</tag>
+<tag>status</tag>
+<status status="FAIL" start="2026-06-19T11:24:20.979997" elapsed="12.600990">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</test>
+<test id="s1-s2-t8" name="TC_HISTORY_REG_08: Trạng Thái Đơn Đặt Sân Phải Hợp Lệ" line="67">
+<kw name="Navigate To My Bookings Page" owner="booking_history_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:24:33.580987" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//my-bookings'</msg>
+<arg>${URL}/my-bookings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:24:33.580987" elapsed="0.353139"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:24:35.935883" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:24:33.935644" elapsed="2.000239"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch sử đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:24:35.935883" elapsed="0.017492"/>
+</kw>
+<doc>Điều hướng tới trang Lịch sử đặt sân (yêu cầu đã đăng nhập)</doc>
+<status status="PASS" start="2026-06-19T11:24:33.580987" elapsed="2.372388"/>
+</kw>
+<kw name="Booking Orders Should Be Visible" owner="booking_history_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:24:46.145729" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-15.png"&gt;&lt;img src="screenshots/selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-19T11:24:46.145729" level="FAIL">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</msg>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-06-19T11:24:35.953375" elapsed="10.193947">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${count}</var>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:24:46.147322" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt; 0</arg>
+<arg>msg=Không tìm thấy đơn đặt sân nào trong lịch sử</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2026-06-19T11:24:46.147871" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra có ít nhất 1 đơn đặt sân hiển thị</doc>
+<status status="FAIL" start="2026-06-19T11:24:35.953375" elapsed="10.194496">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Status Should Be Valid" owner="booking_history_keywords">
+<doc>Kiểm tra trạng thái thuộc danh sách hợp lệ</doc>
+<status status="NOT RUN" start="2026-06-19T11:24:46.147871" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra giá trị trạng thái nằm trong danh sách hợp lệ
+(Chờ xác nhận / Đã xác nhận / Đã hủy / Hoàn thành)</doc>
+<tag>booking-history</tag>
+<tag>regression</tag>
+<tag>status</tag>
+<tag>validation</tag>
+<status status="FAIL" start="2026-06-19T11:24:33.580987" elapsed="12.566884">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</test>
+<test id="s1-s2-t9" name="TC_HISTORY_REG_09: Đơn Đặt Sân Đầu Tiên Có Đầy Đủ Thông Tin" line="75">
+<kw name="Navigate To My Bookings Page" owner="booking_history_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:24:46.150026" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//my-bookings'</msg>
+<arg>${URL}/my-bookings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:24:46.150026" elapsed="0.358472"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:24:48.510330" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:24:46.508498" elapsed="2.001832"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch sử đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:24:48.510330" elapsed="0.017142"/>
+</kw>
+<doc>Điều hướng tới trang Lịch sử đặt sân (yêu cầu đã đăng nhập)</doc>
+<status status="PASS" start="2026-06-19T11:24:46.150026" elapsed="2.377446"/>
+</kw>
+<kw name="Booking Orders Should Be Visible" owner="booking_history_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:24:58.721365" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-16.png"&gt;&lt;img src="screenshots/selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-19T11:24:58.721365" level="FAIL">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</msg>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-06-19T11:24:48.527472" elapsed="10.193893">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${count}</var>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:24:58.725404" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt; 0</arg>
+<arg>msg=Không tìm thấy đơn đặt sân nào trong lịch sử</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2026-06-19T11:24:58.725404" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra có ít nhất 1 đơn đặt sân hiển thị</doc>
+<status status="FAIL" start="2026-06-19T11:24:48.527472" elapsed="10.197932">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="First Booking Should Have Complete Info" owner="booking_history_keywords">
+<doc>Kiểm tra đơn đặt sân đầu tiên có đầy đủ thông tin</doc>
+<status status="NOT RUN" start="2026-06-19T11:24:58.725404" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-06-19T11:24:58.726508" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra đơn đặt sân đầu tiên hiển thị đủ 4 thông tin:
+Tên sân, Ngày đặt, Khung giờ, Trạng thái</doc>
+<tag>booking-history</tag>
+<tag>complete-info</tag>
+<tag>regression</tag>
+<status status="FAIL" start="2026-06-19T11:24:46.147871" elapsed="12.578785">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</test>
+<test id="s1-s2-t10" name="TC_HISTORY_REG_10: Log Toàn Bộ Thông Tin Lịch Sử Đặt Sân" line="84">
+<kw name="Navigate To My Bookings Page" owner="booking_history_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:24:58.727688" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//my-bookings'</msg>
+<arg>${URL}/my-bookings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:24:58.727688" elapsed="0.356271"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:25:01.084479" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:24:59.083959" elapsed="2.000520"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch sử đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:25:01.084479" elapsed="0.015482"/>
+</kw>
+<doc>Điều hướng tới trang Lịch sử đặt sân (yêu cầu đã đăng nhập)</doc>
+<status status="PASS" start="2026-06-19T11:24:58.727688" elapsed="2.372273"/>
+</kw>
+<kw name="Booking Orders Should Be Visible" owner="booking_history_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:25:11.278957" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-17.png"&gt;&lt;img src="screenshots/selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-19T11:25:11.278957" level="FAIL">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</msg>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-06-19T11:25:01.102510" elapsed="10.176447">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${count}</var>
+<arg>${BOOKING_HISTORY_ITEM}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:25:11.280006" elapsed="0.000082"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${count} &gt; 0</arg>
+<arg>msg=Không tìm thấy đơn đặt sân nào trong lịch sử</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2026-06-19T11:25:11.280088" elapsed="0.000000"/>
+</kw>
+<doc>Kiểm tra có ít nhất 1 đơn đặt sân hiển thị</doc>
+<status status="FAIL" start="2026-06-19T11:25:01.099961" elapsed="10.180127">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Get All Booking Info And Log" owner="booking_history_keywords">
+<doc>Lấy và log toàn bộ thông tin lịch sử đặt sân</doc>
+<status status="NOT RUN" start="2026-06-19T11:25:11.282253" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-06-19T11:25:11.282253" elapsed="0.000000"/>
+</kw>
+<doc>Lấy và ghi log toàn bộ thông tin các đơn đặt sân để kiểm tra dữ liệu</doc>
+<tag>booking-history</tag>
+<tag>data-log</tag>
+<tag>regression</tag>
+<status status="FAIL" start="2026-06-19T11:24:58.726656" elapsed="12.555597">Element 'xpath=//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')]' not visible after 10 seconds.</status>
+</test>
+<test id="s1-s2-t11" name="TC_HISTORY_REG_11: Điều Hướng Qua Menu Navbar Tới Lịch Sử Đặt Sân" line="92">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:25:11.285089" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:25:11.285089" elapsed="0.345730"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Football Booking</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:25:11.630819" elapsed="0.027800"/>
+</kw>
+<kw name="Navigate To My Bookings Via Nav" owner="booking_history_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${NAV_MY_BOOKINGS}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:25:11.659760" elapsed="0.053270"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:25:11.714143" level="INFO">Clicking element 'xpath=//a[@href='/my-bookings']'.</msg>
+<arg>${NAV_MY_BOOKINGS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:25:11.714143" elapsed="0.166627"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:25:13.881393" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:25:11.880770" elapsed="2.000623"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch sử đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:25:13.881393" elapsed="0.018425"/>
+</kw>
+<doc>Điều hướng tới trang Lịch sử đặt sân qua menu điều hướng</doc>
+<status status="PASS" start="2026-06-19T11:25:11.659760" elapsed="2.240166"/>
+</kw>
+<kw name="Booking History Page Should Be Displayed" owner="booking_history_keywords">
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:25:13.911527" level="INFO">Current location contains 'my-bookings'.</msg>
+<arg>my-bookings</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-06-19T11:25:13.899926" elapsed="0.011601"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:25:13.931000" level="INFO">Current page contains text 'Lịch sử đặt sân'.</msg>
+<arg>Lịch sử đặt sân</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-19T11:25:13.911527" elapsed="0.019473"/>
+</kw>
+<doc>Kiểm tra trang Lịch sử đặt sân hiển thị đúng</doc>
+<status status="PASS" start="2026-06-19T11:25:13.899926" elapsed="0.031074"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:25:14.036045" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-18.png"&gt;&lt;img src="screenshots/selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-19T11:25:13.931000" elapsed="0.105045"/>
+</kw>
+<doc>Kiểm tra có thể vào trang Lịch sử đặt sân thông qua menu điều hướng</doc>
+<tag>booking-history</tag>
+<tag>navbar</tag>
+<tag>navigation</tag>
+<tag>regression</tag>
+<status status="PASS" start="2026-06-19T11:25:11.283783" elapsed="2.752262"/>
+</test>
+<test id="s1-s2-t12" name="TC_HISTORY_REG_12: URL Trang Lịch Sử Đặt Sân Đúng" line="101">
+<kw name="Navigate To My Bookings Page" owner="booking_history_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:25:14.038583" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//my-bookings'</msg>
+<arg>${URL}/my-bookings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:25:14.038583" elapsed="0.452287"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:25:16.492526" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:25:14.490870" elapsed="2.001656"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch sử đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:25:16.492526" elapsed="0.017352"/>
+</kw>
+<doc>Điều hướng tới trang Lịch sử đặt sân (yêu cầu đã đăng nhập)</doc>
+<status status="PASS" start="2026-06-19T11:25:14.037557" elapsed="2.472321"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:25:16.520524" level="INFO">Current location contains 'my-bookings'.</msg>
+<arg>my-bookings</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-06-19T11:25:16.509878" elapsed="0.010646"/>
+</kw>
+<doc>Kiểm tra URL khi vào trang Lịch sử đặt sân chứa 'my-bookings'</doc>
+<tag>booking-history</tag>
+<tag>regression</tag>
+<tag>url</tag>
+<status status="PASS" start="2026-06-19T11:25:14.036045" elapsed="2.484479"/>
+</test>
+<kw name="Close Browser Application" owner="booking_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-19T11:25:16.520524" elapsed="2.191353"/>
+</kw>
+<doc>Đóng browser</doc>
+<status status="PASS" start="2026-06-19T11:25:16.520524" elapsed="2.191353"/>
+</kw>
+<doc>Regression Tests - Lịch sử đặt sân
+Kiểm tra chi tiết toàn bộ thông tin hiển thị trong trang Lịch sử đặt sân:
+Tên sân, Ngày đặt, Khung giờ, Trạng thái
+Luồng: Mở website → Đăng nhập (04858758475/12345) → Lịch sử đặt sân → Kiểm tra chi tiết</doc>
+<status status="FAIL" start="2026-06-19T11:23:29.958622" elapsed="108.753255"/>
+</suite>
+<status status="FAIL" start="2026-06-19T11:22:13.061545" elapsed="185.653478"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="15" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="5" fail="15" skip="0">booking-history</stat>
+<stat pass="0" fail="1" skip="0">complete-info</stat>
+<stat pass="0" fail="1" skip="0">data-log</stat>
+<stat pass="0" fail="2" skip="0">date</stat>
+<stat pass="0" fail="2" skip="0">field-name</stat>
+<stat pass="0" fail="2" skip="0">login</stat>
+<stat pass="1" fail="0" skip="0">navbar</stat>
+<stat pass="3" fail="0" skip="0">navigation</stat>
+<stat pass="0" fail="2" skip="0">orders</stat>
+<stat pass="3" fail="9" skip="0">regression</stat>
+<stat pass="2" fail="7" skip="0">smoke</stat>
+<stat pass="0" fail="3" skip="0">status</stat>
+<stat pass="0" fail="2" skip="0">time-slot</stat>
+<stat pass="1" fail="0" skip="0">url</stat>
+<stat pass="0" fail="1" skip="0">validation</stat>
+<stat pass="1" fail="0" skip="0">website</stat>
+</tag>
+<suite>
+<stat name="Booking History" id="s1" pass="5" fail="15" skip="0">Booking History</stat>
+<stat name="Booking History Basic Tests" id="s1-s1" pass="2" fail="6" skip="0">Booking History.Booking History Basic Tests</stat>
+<stat name="Booking History Tests" id="s1-s2" pass="3" fail="9" skip="0">Booking History.Booking History Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

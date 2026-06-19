@@ -1,0 +1,3612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.5 on win32)" generated="2026-06-19T11:50:09.082887" rpa="false" schemaversion="5">
+<suite id="s1" name="Booking" source="D:\TestRobotFrameWork POM\tests\booking">
+<suite id="s1-s1" name="Booking Flow Tests" source="D:\TestRobotFrameWork POM\tests\booking\booking_flow_tests.robot">
+<kw name="Open Browser To Application" owner="booking_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:50:09.592445" level="INFO">Opening browser 'chrome' to base url 'https://football-booking-system-seven.vercel.app/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:50:09.592445" elapsed="4.535245"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-19T11:50:14.127690" elapsed="0.081722"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>${OUTPUT DIR}${/}screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-06-19T11:50:14.209412" elapsed="0.000509"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Football Booking</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:50:14.209921" elapsed="0.079632"/>
+</kw>
+<doc>Mở browser và truy cập website</doc>
+<status status="PASS" start="2026-06-19T11:50:09.591936" elapsed="4.698641"/>
+</kw>
+<test id="s1-s1-t1" name="TC_BOOKING_REG_01" line="10">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:50:14.291596" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:50:14.291596" elapsed="0.706837"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:50:17.999923" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:50:14.999455" elapsed="3.000660"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:50:38.280977" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-1.png"&gt;&lt;img src="screenshots/selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-19T11:50:38.280977" level="FAIL">Element 'xpath=(//a[contains(text(),'Xem chi tiết')])[1]' not visible after 20 seconds.</msg>
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-06-19T11:50:18.000115" elapsed="20.280862">Element 'xpath=(//a[contains(text(),'Xem chi tiết')])[1]' not visible after 20 seconds.</status>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="NOT RUN" start="2026-06-19T11:50:38.280977" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-06-19T11:50:38.280977" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2026-06-19T11:50:14.291596" elapsed="23.994865">Element 'xpath=(//a[contains(text(),'Xem chi tiết')])[1]' not visible after 20 seconds.</status>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(@href,'/fields')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-06-19T11:50:38.286980" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(.,'Xem chi tiết')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:50:38.286980" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch đặt sân</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-06-19T11:50:38.287508" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class,'fd-slot--available') and .//span[text()='06:00']]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:50:38.287508" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:50:38.287508" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Xác nhận đặt sân</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-06-19T11:50:38.288061" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//button[contains(.,'XÁC NHẬN ĐẶT SÂN')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:50:38.288061" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>thành công</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-06-19T11:50:38.288061" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2026-06-19T11:50:14.290577" elapsed="23.998288">Element 'xpath=(//a[contains(text(),'Xem chi tiết')])[1]' not visible after 20 seconds.</status>
+</test>
+<test id="s1-s1-t2" name="TC_BOOKING_REG_02" line="30">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:50:38.290017" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:50:38.290017" elapsed="0.480429"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:50:41.770720" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:50:38.770446" elapsed="3.000274"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:50:41.770720" elapsed="8.282172"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:50:50.052892" elapsed="0.316597"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:50:51.369644" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:50:50.369489" elapsed="1.000155"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:50:38.290017" elapsed="13.079627"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:50:51.370469" level="INFO">Clicking element 'xpath=//a[contains(.,'Xem chi tiết')]'.</msg>
+<arg>xpath=//a[contains(.,'Xem chi tiết')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:50:51.370469" elapsed="0.177358"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:50:51.550920" level="INFO">Clicking element 'xpath=//a[contains(.,'Tiến hành đặt sân')]'.</msg>
+<msg time="2026-06-19T11:50:51.690089" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-2.png"&gt;&lt;img src="screenshots/selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-19T11:50:51.690089" level="FAIL">Element with locator 'xpath=//a[contains(.,'Tiến hành đặt sân')]' not found.</msg>
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-19T11:50:51.549856" elapsed="0.146818">Element with locator 'xpath=//a[contains(.,'Tiến hành đặt sân')]' not found.</status>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<arg>Xác nhận đặt sân</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:50:51.696674" elapsed="0.000000"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<arg>Thông tin khách hàng</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:50:51.697792" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2026-06-19T11:50:38.290017" elapsed="13.407775">Element with locator 'xpath=//a[contains(.,'Tiến hành đặt sân')]' not found.</status>
+</test>
+<test id="s1-s1-t3" name="TC_BOOKING_REG_03" line="41">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:50:51.699993" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:50:51.699993" elapsed="0.445532"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:50:55.145701" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:50:52.145525" elapsed="3.000176"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:50:55.145701" elapsed="0.028312"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:50:55.174013" elapsed="0.290667"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:50:56.465089" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:50:55.464680" elapsed="1.000409"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:50:51.699993" elapsed="4.765096"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:50:56.465754" level="INFO">Clicking element 'xpath=//a[contains(.,'Xem chi tiết')]'.</msg>
+<arg>xpath=//a[contains(.,'Xem chi tiết')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:50:56.465754" elapsed="0.136447"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:50:56.803464" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-3.png"&gt;&lt;img src="screenshots/selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-19T11:50:56.803464" level="FAIL">Page should have contained text 'Lịch đặt sân' but did not.</msg>
+<arg>Lịch đặt sân</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="FAIL" start="2026-06-19T11:50:56.603201" elapsed="0.201263">Page should have contained text 'Lịch đặt sân' but did not.</status>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<arg>Thông tin đặt sân</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:50:56.804464" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2026-06-19T11:50:51.697792" elapsed="5.107915">Page should have contained text 'Lịch đặt sân' but did not.</status>
+</test>
+<test id="s1-s1-t4" name="TC_BOOKING_REG_04" line="50">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:50:56.806855" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:50:56.806855" elapsed="0.363514"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:00.170774" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:50:57.170369" elapsed="3.000405"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:51:00.170774" elapsed="0.026192"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:51:00.196966" elapsed="0.298334"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:01.495685" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:00.495300" elapsed="1.000385"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:50:56.806855" elapsed="4.688830"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:01.496750" level="INFO">Clicking element 'xpath=//a[contains(.,'Xem chi tiết')]'.</msg>
+<arg>xpath=//a[contains(.,'Xem chi tiết')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:01.495685" elapsed="0.104111"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:01.742883" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-4.png"&gt;&lt;img src="screenshots/selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-19T11:51:01.742883" level="FAIL">Page should have contained element 'xpath=//a[contains(.,'Tiến hành đặt sân')]' but did not.</msg>
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2026-06-19T11:51:01.599796" elapsed="0.145616">Page should have contained element 'xpath=//a[contains(.,'Tiến hành đặt sân')]' but did not.</status>
+</kw>
+<status status="FAIL" start="2026-06-19T11:50:56.806744" elapsed="4.938668">Page should have contained element 'xpath=//a[contains(.,'Tiến hành đặt sân')]' but did not.</status>
+</test>
+<kw name="Close Browser Application" owner="booking_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-19T11:51:01.746962" elapsed="2.214771"/>
+</kw>
+<doc>Đóng browser</doc>
+<status status="PASS" start="2026-06-19T11:51:01.746962" elapsed="2.214771"/>
+</kw>
+<doc>Regression Test - Booking</doc>
+<status status="FAIL" start="2026-06-19T11:50:09.121901" elapsed="54.839832"/>
+</suite>
+<suite id="s1-s2" name="Booking Modal Tests" source="D:\TestRobotFrameWork POM\tests\booking\booking_modal_tests.robot">
+<kw name="Open Browser To Application" owner="booking_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:03.988769" level="INFO">Opening browser 'chrome' to base url 'https://football-booking-system-seven.vercel.app/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:51:03.987235" elapsed="2.443382"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-19T11:51:06.430617" elapsed="0.051621"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>${OUTPUT DIR}${/}screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-06-19T11:51:06.482238" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Football Booking</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:51:06.483745" elapsed="0.046467"/>
+</kw>
+<doc>Mở browser và truy cập website</doc>
+<status status="PASS" start="2026-06-19T11:51:03.987235" elapsed="2.542977"/>
+</kw>
+<test id="s1-s2-t1" name="TC_SMOKE_01: Có Thể Truy Cập Trang Danh Sách Sân" line="13">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:06.531749" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:51:06.531749" elapsed="0.408174"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:09.941402" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:06.940946" elapsed="3.000456"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:51:09.941402" elapsed="0.048191"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:51:09.989593" elapsed="0.313363"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:11.303149" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:10.302956" elapsed="1.000193"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:51:06.530803" elapsed="4.772346"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:11.333632" level="INFO">Current page contains text 'Sân'.</msg>
+<arg>Sân</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-19T11:51:11.303149" elapsed="0.030483"/>
+</kw>
+<doc>Kiểm tra truy cập trang danh sách sân</doc>
+<tag>smoke</tag>
+<status status="PASS" start="2026-06-19T11:51:06.530212" elapsed="4.804478"/>
+</test>
+<test id="s1-s2-t2" name="TC_SMOKE_02: Có Thể Xem Chi Tiết Sân" line="22">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:11.335814" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:51:11.335814" elapsed="0.361760"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:14.699002" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:11.697574" elapsed="3.001428"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:51:14.699002" elapsed="0.030037"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:51:14.729039" elapsed="0.288373"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:16.017877" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:15.017412" elapsed="1.000465"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:51:11.335814" elapsed="4.682063"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:16.019079" level="INFO">Clicking element 'xpath=(//a[contains(.,'Xem chi tiết')])[1]'.</msg>
+<arg>xpath=(//a[contains(.,'Xem chi tiết')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:16.017877" elapsed="0.141135"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch đặt sân</arg>
+<arg>20s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:51:16.160954" elapsed="0.701907"/>
+</kw>
+<doc>Kiểm tra mở trang chi tiết sân</doc>
+<tag>smoke</tag>
+<status status="PASS" start="2026-06-19T11:51:11.334690" elapsed="5.528171"/>
+</test>
+<test id="s1-s2-t3" name="TC_SMOKE_03: Có Thể Điều Hướng Đến Trang Booking" line="35">
+<kw name="Navigate To Booking Page" owner="booking_keywords">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:16.866282" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:51:16.866282" elapsed="0.379056"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:20.247120" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:17.246953" elapsed="3.000167"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:51:20.247636" elapsed="0.031693"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:51:20.279865" elapsed="0.312330"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:21.592599" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:20.592195" elapsed="1.000404"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:51:16.865264" elapsed="4.727335"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:51:21.592599" elapsed="0.027854"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:21.620453" level="INFO">Clicking element 'xpath=(//a[contains(text(),'Xem chi tiết')])[1]'.</msg>
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:21.620453" elapsed="0.099689"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:51:21.720142" elapsed="0.669884"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:51:22.390026" elapsed="0.036392"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:22.426418" level="INFO">Clicking element 'xpath=//span[contains(text(),'Chưa chọn')]'.</msg>
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:22.426418" elapsed="0.116402"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:24.543789" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:22.543338" elapsed="2.000451"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:51:24.543789" elapsed="0.034228"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:24.578017" level="INFO">Clicking element 'xpath=(//button[contains(@class,'bf-slot-btn')])[1]'.</msg>
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:24.578017" elapsed="0.111721"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:26.691539" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:24.691275" elapsed="2.000264"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:26.750161" level="INFO">${slot_text} = 06:00 - 07:00</msg>
+<var>${slot_text}</var>
+<arg>xpath=//span[contains(@class,'text-slate-900')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:26.691539" elapsed="0.058622"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SLOT_SELECTED=${slot_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-19T11:51:26.750161" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:26.990378" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-5.png"&gt;&lt;img src="screenshots/selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-19T11:51:26.750161" elapsed="0.242208"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:27.017591" level="INFO">${selected} = 06:00 - 07:00</msg>
+<var>${selected}</var>
+<arg>xpath=//span[contains(@class,'text-slate-900')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:26.992369" elapsed="0.025222"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SELECTED_SLOT=${selected}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-19T11:51:27.017591" elapsed="0.001511"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:51:27.019102" elapsed="0.298875"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:29.318270" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:27.317977" elapsed="2.000293"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:29.318270" level="INFO">Clicking link 'xpath=//a[contains(.,'Tiến hành đặt sân')]'.</msg>
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:29.318270" elapsed="0.214600"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Xác nhận đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:51:29.532870" elapsed="0.051115"/>
+</kw>
+<doc>Điều hướng tới trang booking theo luồng thực tế</doc>
+<status status="PASS" start="2026-06-19T11:51:16.865264" elapsed="12.718721"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:29.602780" level="INFO">Current page contains text 'Xác nhận đặt sân'.</msg>
+<arg>Xác nhận đặt sân</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-19T11:51:29.583985" elapsed="0.018795"/>
+</kw>
+<doc>Kiểm tra luồng chọn sân và chuyển sang trang booking</doc>
+<tag>smoke</tag>
+<status status="PASS" start="2026-06-19T11:51:16.864020" elapsed="12.738760"/>
+</test>
+<test id="s1-s2-t4" name="TC_SMOKE_04: Form Booking Hiển Thị Đầy Đủ" line="44">
+<kw name="Navigate To Booking Page" owner="booking_keywords">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:29.606860" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:51:29.606214" elapsed="0.432213"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:33.040342" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:30.039964" elapsed="3.000378"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:51:33.040342" elapsed="0.027687"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:51:33.068029" elapsed="0.299296"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:34.368058" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:33.367325" elapsed="1.000733"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:51:29.606214" elapsed="4.761844"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:51:34.368058" elapsed="0.028849"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:34.397422" level="INFO">Clicking element 'xpath=(//a[contains(text(),'Xem chi tiết')])[1]'.</msg>
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:34.396907" elapsed="0.101828"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:51:34.498735" elapsed="0.680577"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:51:35.179662" elapsed="0.023469"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:35.203131" level="INFO">Clicking element 'xpath=//span[contains(text(),'Chưa chọn')]'.</msg>
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:35.203131" elapsed="0.099826"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:37.303372" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:35.302957" elapsed="2.000415"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:51:37.303372" elapsed="0.027462"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:37.330834" level="INFO">Clicking element 'xpath=(//button[contains(@class,'bf-slot-btn')])[1]'.</msg>
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:37.330834" elapsed="0.114484"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:39.445724" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:37.445318" elapsed="2.000406"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:39.472093" level="INFO">${slot_text} = 06:00 - 07:00</msg>
+<var>${slot_text}</var>
+<arg>xpath=//span[contains(@class,'text-slate-900')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:39.445724" elapsed="0.026369"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SLOT_SELECTED=${slot_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-19T11:51:39.472093" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:39.708709" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-6.png"&gt;&lt;img src="screenshots/selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-19T11:51:39.473846" elapsed="0.234863"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:39.733257" level="INFO">${selected} = 06:00 - 07:00</msg>
+<var>${selected}</var>
+<arg>xpath=//span[contains(@class,'text-slate-900')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:39.708709" elapsed="0.024548"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SELECTED_SLOT=${selected}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-19T11:51:39.733257" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:51:39.733257" elapsed="0.288629"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:42.022879" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:40.022419" elapsed="2.000460"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:42.022879" level="INFO">Clicking link 'xpath=//a[contains(.,'Tiến hành đặt sân')]'.</msg>
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:42.022879" elapsed="0.138766"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Xác nhận đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:51:42.161645" elapsed="0.020081"/>
+</kw>
+<doc>Điều hướng tới trang booking theo luồng thực tế</doc>
+<status status="PASS" start="2026-06-19T11:51:29.604204" elapsed="12.577522"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:42.206643" level="INFO">Current page contains element 'xpath=//input[@placeholder='Nguyễn Văn A']'.</msg>
+<arg>${FIELD_BOOKING_NAME}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:51:42.182732" elapsed="0.023911"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:42.236665" level="INFO">Current page contains element 'xpath=//input[@placeholder='090 123 4567']'.</msg>
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:51:42.207927" elapsed="0.029751"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:42.270422" level="INFO">Current page contains element 'xpath=//input[@type='email']'.</msg>
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:51:42.237678" elapsed="0.032744"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:42.297753" level="INFO">Current page contains element 'xpath=//textarea'.</msg>
+<arg>${FIELD_BOOKING_NOTE}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:51:42.271446" elapsed="0.026307"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:42.320257" level="INFO">Current page contains element 'xpath=//button[contains(.,'XÁC NHẬN ĐẶT SÂN')]'.</msg>
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:51:42.298769" elapsed="0.021488"/>
+</kw>
+<doc>Kiểm tra các trường trên form booking</doc>
+<tag>smoke</tag>
+<status status="PASS" start="2026-06-19T11:51:29.604204" elapsed="12.716576"/>
+</test>
+<test id="s1-s2-t5" name="TC_SMOKE_05: Có Thể Nhấn Nút Xác Nhận Đặt Sân" line="65">
+<kw name="Navigate To Booking Page" owner="booking_keywords">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:42.324296" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:51:42.322829" elapsed="0.514665"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:45.839217" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:42.838520" elapsed="3.000697"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:51:45.839734" elapsed="0.039435"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:51:45.879704" elapsed="0.303506"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:47.183740" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:46.183210" elapsed="1.000530"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:51:42.322829" elapsed="4.860911"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:51:47.183740" elapsed="0.069818"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:47.255728" level="INFO">Clicking element 'xpath=(//a[contains(text(),'Xem chi tiết')])[1]'.</msg>
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:47.254648" elapsed="0.242268"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:51:47.497963" elapsed="0.987929"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:51:48.487399" elapsed="0.034409"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:48.521808" level="INFO">Clicking element 'xpath=//span[contains(text(),'Chưa chọn')]'.</msg>
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:48.521808" elapsed="0.229495"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:50.751550" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:48.751303" elapsed="2.000247"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:51:50.751550" elapsed="0.068885"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:50.820435" level="INFO">Clicking element 'xpath=(//button[contains(@class,'bf-slot-btn')])[1]'.</msg>
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:50.820435" elapsed="0.176495"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:52.998257" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:50.997937" elapsed="2.000858"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:53.050245" level="INFO">${slot_text} = 06:00 - 07:00</msg>
+<var>${slot_text}</var>
+<arg>xpath=//span[contains(@class,'text-slate-900')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:52.998795" elapsed="0.051450"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SLOT_SELECTED=${slot_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-19T11:51:53.050245" elapsed="0.002701"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:53.370744" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-7.png"&gt;&lt;img src="screenshots/selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-19T11:51:53.052946" elapsed="0.318933"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:53.410863" level="INFO">${selected} = 06:00 - 07:00</msg>
+<var>${selected}</var>
+<arg>xpath=//span[contains(@class,'text-slate-900')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:53.371879" elapsed="0.038984"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SELECTED_SLOT=${selected}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-19T11:51:53.411369" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:51:53.411369" elapsed="0.314064"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:51:55.726950" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:53.726588" elapsed="2.000362"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:55.726950" level="INFO">Clicking link 'xpath=//a[contains(.,'Tiến hành đặt sân')]'.</msg>
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:55.726950" elapsed="0.136219"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Xác nhận đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:51:55.863169" elapsed="0.028948"/>
+</kw>
+<doc>Điều hướng tới trang booking theo luồng thực tế</doc>
+<status status="PASS" start="2026-06-19T11:51:42.322829" elapsed="13.569288"/>
+</kw>
+<kw name="Fill Booking Information" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:51:55.895099" elapsed="0.030155"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:55.925254" elapsed="0.077783"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:56.003037" level="INFO">Typing text 'Nguyễn Văn A' into text field 'xpath=//input[@placeholder='Nguyễn Văn A']'.</msg>
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>Nguyễn Văn A</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:56.003037" elapsed="0.193706"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:56.196743" elapsed="0.059360"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:56.256717" level="INFO">Typing text '0912345678' into text field 'xpath=//input[@placeholder='090 123 4567']'.</msg>
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<arg>0912345678</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:56.256625" elapsed="0.144430"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:56.403076" elapsed="0.047206"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:56.452664" level="INFO">Typing text 'test@gmail.com' into text field 'xpath=//input[@type='email']'.</msg>
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<arg>test@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:56.452664" elapsed="0.150609"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:51:55.892117" elapsed="0.711156"/>
+</kw>
+<kw name="Confirm Booking" owner="booking_keywords">
+<kw name="Fill Booking Information" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:51:56.603273" elapsed="0.030564"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:56.634857" elapsed="0.063015"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:56.698888" level="INFO">Typing text 'Nguyễn Văn A' into text field 'xpath=//input[@placeholder='Nguyễn Văn A']'.</msg>
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>Nguyễn Văn A</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:56.697872" elapsed="0.148980"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:56.847708" elapsed="0.054043"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:56.901751" level="INFO">Typing text '0912345678' into text field 'xpath=//input[@placeholder='090 123 4567']'.</msg>
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<arg>0912345678</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:56.901751" elapsed="0.138263"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:57.040079" elapsed="0.046344"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:57.087421" level="INFO">Typing text 'test@gmail.com' into text field 'xpath=//input[@type='email']'.</msg>
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<arg>test@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:57.086423" elapsed="0.134181"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:51:56.603273" elapsed="0.617847"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:51:57.221120" elapsed="0.028826"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:51:57.250045" level="INFO">Clicking element 'xpath=//button[contains(.,'XÁC NHẬN ĐẶT SÂN')]'.</msg>
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:51:57.250045" elapsed="0.162699"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:52:00.412859" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:51:57.412744" elapsed="3.000115"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:51:56.603273" elapsed="3.809586"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:00.613887" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-8.png"&gt;&lt;img src="screenshots/selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-19T11:52:00.414071" elapsed="0.199816"/>
+</kw>
+<doc>Kiểm tra submit booking</doc>
+<tag>smoke</tag>
+<status status="PASS" start="2026-06-19T11:51:42.320780" elapsed="18.293107"/>
+</test>
+<test id="s1-s2-t6" name="TC_SMOKE_06: Popup Xác Nhận Hiển Thị" line="76">
+<kw name="Navigate To Booking Page" owner="booking_keywords">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:00.619339" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:52:00.619339" elapsed="0.329507"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:52:03.948977" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:52:00.948846" elapsed="3.000131"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:03.948977" elapsed="0.048805"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:52:03.998301" elapsed="0.319237"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:52:05.317973" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:52:04.317538" elapsed="1.000435"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:52:00.619175" elapsed="4.698798"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:05.317973" elapsed="0.033836"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:05.351809" level="INFO">Clicking element 'xpath=(//a[contains(text(),'Xem chi tiết')])[1]'.</msg>
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:05.351809" elapsed="0.117483"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:52:05.469292" elapsed="0.879686"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:06.348978" elapsed="0.027167"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:06.376145" level="INFO">Clicking element 'xpath=//span[contains(text(),'Chưa chọn')]'.</msg>
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:06.376145" elapsed="0.134997"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:52:08.511901" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:52:06.511142" elapsed="2.000759"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:08.511901" elapsed="0.041563"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:08.553464" level="INFO">Clicking element 'xpath=(//button[contains(@class,'bf-slot-btn')])[1]'.</msg>
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:08.553464" elapsed="0.108276"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:52:10.662159" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:52:08.661740" elapsed="2.000419"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:10.692638" level="INFO">${slot_text} = 06:00 - 07:00</msg>
+<var>${slot_text}</var>
+<arg>xpath=//span[contains(@class,'text-slate-900')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:10.662159" elapsed="0.030479"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SLOT_SELECTED=${slot_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-19T11:52:10.692638" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:10.960676" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-9.png"&gt;&lt;img src="screenshots/selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-19T11:52:10.695189" elapsed="0.265487"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:10.987615" level="INFO">${selected} = 06:00 - 07:00</msg>
+<var>${selected}</var>
+<arg>xpath=//span[contains(@class,'text-slate-900')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:10.960676" elapsed="0.026939"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SELECTED_SLOT=${selected}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-19T11:52:10.987615" elapsed="0.001061"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:52:10.988676" elapsed="0.294618"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:52:13.284063" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:52:11.283294" elapsed="2.000769"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:13.284063" level="INFO">Clicking link 'xpath=//a[contains(.,'Tiến hành đặt sân')]'.</msg>
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:13.284063" elapsed="0.144615"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Xác nhận đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:52:13.428678" elapsed="0.046758"/>
+</kw>
+<doc>Điều hướng tới trang booking theo luồng thực tế</doc>
+<status status="PASS" start="2026-06-19T11:52:00.613887" elapsed="12.861549"/>
+</kw>
+<kw name="Fill Booking Information" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:13.475436" elapsed="0.040090"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:13.515526" elapsed="0.074475"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:13.590001" level="INFO">Typing text 'Nguyễn Văn A' into text field 'xpath=//input[@placeholder='Nguyễn Văn A']'.</msg>
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>Nguyễn Văn A</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:13.590001" elapsed="0.171495"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:13.762514" elapsed="0.050295"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:13.812809" level="INFO">Typing text '0912345678' into text field 'xpath=//input[@placeholder='090 123 4567']'.</msg>
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<arg>0912345678</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:13.812809" elapsed="0.162669"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:13.975478" elapsed="0.077777"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:14.053255" level="INFO">Typing text 'test@gmail.com' into text field 'xpath=//input[@type='email']'.</msg>
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<arg>test@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:14.053255" elapsed="0.149482"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:52:13.475436" elapsed="0.727301"/>
+</kw>
+<kw name="Click Confirm Booking" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:14.205158" elapsed="0.022508"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:52:14.227666" elapsed="0.319301"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:14.546967" level="INFO">Clicking element 'xpath=//button[contains(.,'XÁC NHẬN ĐẶT SÂN')]'.</msg>
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:14.546967" elapsed="0.114588"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:52:14.202737" elapsed="0.458818"/>
+</kw>
+<kw name="Confirm Booking Modal Should Be Visible" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.cd-modal</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:14.664092" elapsed="0.044461"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:14.729489" level="INFO">Current page contains text 'Xác nhận đặt sân'.</msg>
+<arg>Xác nhận đặt sân</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-19T11:52:14.708553" elapsed="0.020936"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:14.750163" level="INFO">Current page contains element 'css=.cd-btn--confirm'.</msg>
+<arg>css=.cd-btn--confirm</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:52:14.729489" elapsed="0.020674"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:14.770224" level="INFO">Current page contains element 'css=.cd-btn--cancel'.</msg>
+<arg>css=.cd-btn--cancel</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:52:14.750163" elapsed="0.020061"/>
+</kw>
+<doc>Kiểm tra modal xác nhận hiển thị</doc>
+<status status="PASS" start="2026-06-19T11:52:14.661555" elapsed="0.108669"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" start="2026-06-19T11:52:00.613887" elapsed="14.156337"/>
+</test>
+<test id="s1-s2-t7" name="TC_SMOKE_07: Xác Nhận Đặt Sân Thành Công" line="86">
+<kw name="Navigate To Booking Page" owner="booking_keywords">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:14.776131" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:52:14.775600" elapsed="0.396904"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:52:18.173070" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:52:15.172504" elapsed="3.000566"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:18.173070" elapsed="0.032578"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:52:18.205648" elapsed="0.289617"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:52:19.497216" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:52:18.496824" elapsed="1.000392"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:52:14.775600" elapsed="4.722193"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:19.497793" elapsed="0.026123"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:19.525434" level="INFO">Clicking element 'xpath=(//a[contains(text(),'Xem chi tiết')])[1]'.</msg>
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:19.525434" elapsed="0.100135"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:52:19.625569" elapsed="0.656947"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:20.287626" elapsed="0.024147"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:20.313292" level="INFO">Clicking element 'xpath=//span[contains(text(),'Chưa chọn')]'.</msg>
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:20.311773" elapsed="0.108603"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:52:22.420897" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:52:20.420376" elapsed="2.000521"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:22.420897" elapsed="0.037918"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:22.458815" level="INFO">Clicking element 'xpath=(//button[contains(@class,'bf-slot-btn')])[1]'.</msg>
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:22.458815" elapsed="0.120985"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:52:24.580183" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:52:22.579800" elapsed="2.000383"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:24.608710" level="INFO">${slot_text} = 06:00 - 07:00</msg>
+<var>${slot_text}</var>
+<arg>xpath=//span[contains(@class,'text-slate-900')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:24.580183" elapsed="0.028527"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SLOT_SELECTED=${slot_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-19T11:52:24.608710" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:24.838872" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-10.png"&gt;&lt;img src="screenshots/selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-19T11:52:24.609826" elapsed="0.229046"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:24.863950" level="INFO">${selected} = 06:00 - 07:00</msg>
+<var>${selected}</var>
+<arg>xpath=//span[contains(@class,'text-slate-900')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:24.838872" elapsed="0.025078"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SELECTED_SLOT=${selected}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-19T11:52:24.863950" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:52:24.863950" elapsed="0.302024"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:52:27.166427" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:52:25.165974" elapsed="2.000453"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:27.166427" level="INFO">Clicking link 'xpath=//a[contains(.,'Tiến hành đặt sân')]'.</msg>
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:27.166427" elapsed="0.134964"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Xác nhận đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:52:27.301391" elapsed="0.024341"/>
+</kw>
+<doc>Điều hướng tới trang booking theo luồng thực tế</doc>
+<status status="PASS" start="2026-06-19T11:52:14.775055" elapsed="12.551366"/>
+</kw>
+<kw name="Fill Booking Information" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:27.326999" elapsed="0.036797"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:27.363796" elapsed="0.066786"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:27.430671" level="INFO">Typing text 'Nguyễn Văn A' into text field 'xpath=//input[@placeholder='Nguyễn Văn A']'.</msg>
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>Nguyễn Văn A</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:27.430671" elapsed="0.213719"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:27.644390" elapsed="0.057657"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:27.703133" level="INFO">Typing text '0912345678' into text field 'xpath=//input[@placeholder='090 123 4567']'.</msg>
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<arg>0912345678</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:27.702047" elapsed="0.135130"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:27.837177" elapsed="0.076679"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:27.914361" level="INFO">Typing text 'test@gmail.com' into text field 'xpath=//input[@type='email']'.</msg>
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<arg>test@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:27.913856" elapsed="0.130345"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:52:27.326999" elapsed="0.717202"/>
+</kw>
+<kw name="Click Confirm Booking" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:28.044201" elapsed="0.024093"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:52:28.068919" elapsed="0.289840"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:28.360178" level="INFO">Clicking element 'xpath=//button[contains(.,'XÁC NHẬN ĐẶT SÂN')]'.</msg>
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:28.359654" elapsed="0.134699"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:52:28.044201" elapsed="0.450152"/>
+</kw>
+<kw name="Confirm Booking Modal Should Be Visible" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.cd-modal</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:28.495939" elapsed="0.039403"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:28.562581" level="INFO">Current page contains text 'Xác nhận đặt sân'.</msg>
+<arg>Xác nhận đặt sân</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-19T11:52:28.535342" elapsed="0.027239"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:28.579817" level="INFO">Current page contains element 'css=.cd-btn--confirm'.</msg>
+<arg>css=.cd-btn--confirm</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:52:28.562581" elapsed="0.017236"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:28.598055" level="INFO">Current page contains element 'css=.cd-btn--cancel'.</msg>
+<arg>css=.cd-btn--cancel</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:52:28.580964" elapsed="0.017091"/>
+</kw>
+<doc>Kiểm tra modal xác nhận hiển thị</doc>
+<status status="PASS" start="2026-06-19T11:52:28.495391" elapsed="0.102664"/>
+</kw>
+<kw name="Confirm Booking In Modal" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.cd-modal</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:28.600071" elapsed="0.029811"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:28.631047" level="INFO">Clicking element 'css=.cd-btn--confirm'.</msg>
+<arg>css=.cd-btn--confirm</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:28.629882" elapsed="0.177141"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:52:30.808998" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:52:28.808495" elapsed="2.000503"/>
+</kw>
+<doc>Nhấn nút xác nhận trong popup</doc>
+<status status="PASS" start="2026-06-19T11:52:28.599560" elapsed="2.209438"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:30.925338" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-11.png"&gt;&lt;img src="screenshots/selenium-screenshot-11.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-19T11:52:30.808998" elapsed="0.116340"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" start="2026-06-19T11:52:14.773534" elapsed="16.151804"/>
+</test>
+<test id="s1-s2-t8" name="TC_SMOKE_08: Có Thể Hủy Booking Trong Modal" line="100">
+<kw name="Navigate To Booking Page" owner="booking_keywords">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:30.927865" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:52:30.927865" elapsed="0.369093"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:52:34.297953" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:52:31.296958" elapsed="3.000995"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:34.297953" elapsed="0.028420"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:52:34.329411" elapsed="0.303370"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:52:35.633051" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:52:34.632781" elapsed="1.000270"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:52:30.927865" elapsed="4.705186"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:35.633051" elapsed="0.032689"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:35.665740" level="INFO">Clicking element 'xpath=(//a[contains(text(),'Xem chi tiết')])[1]'.</msg>
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:35.665740" elapsed="0.106069"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:52:35.771809" elapsed="0.887020"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:36.658961" elapsed="0.044847"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:36.704838" level="INFO">Clicking element 'xpath=//span[contains(text(),'Chưa chọn')]'.</msg>
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:36.704838" elapsed="0.123257"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:52:38.829469" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:52:36.828095" elapsed="2.001374"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:38.829469" elapsed="0.044586"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:38.874055" level="INFO">Clicking element 'xpath=(//button[contains(@class,'bf-slot-btn')])[1]'.</msg>
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:38.874055" elapsed="0.130033"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:52:41.005678" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:52:39.005088" elapsed="2.000590"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:41.042281" level="INFO">${slot_text} = 06:00 - 07:00</msg>
+<var>${slot_text}</var>
+<arg>xpath=//span[contains(@class,'text-slate-900')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:41.006216" elapsed="0.036065"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SLOT_SELECTED=${slot_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-19T11:52:41.043306" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:41.287781" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-12.png"&gt;&lt;img src="screenshots/selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-19T11:52:41.043306" elapsed="0.244475"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:41.318987" level="INFO">${selected} = 06:00 - 07:00</msg>
+<var>${selected}</var>
+<arg>xpath=//span[contains(@class,'text-slate-900')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:41.287781" elapsed="0.031206"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SELECTED_SLOT=${selected}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-19T11:52:41.318987" elapsed="0.000531"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:52:41.319518" elapsed="0.299853"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:52:43.620012" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:52:41.619371" elapsed="2.000641"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:43.620853" level="INFO">Clicking link 'xpath=//a[contains(.,'Tiến hành đặt sân')]'.</msg>
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:43.620560" elapsed="0.160011"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Xác nhận đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:52:43.780571" elapsed="0.026185"/>
+</kw>
+<doc>Điều hướng tới trang booking theo luồng thực tế</doc>
+<status status="PASS" start="2026-06-19T11:52:30.926857" elapsed="12.879899"/>
+</kw>
+<kw name="Fill Booking Information" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:43.808856" elapsed="0.030216"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:43.840089" elapsed="0.071168"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:43.911257" level="INFO">Typing text 'Nguyễn Văn A' into text field 'xpath=//input[@placeholder='Nguyễn Văn A']'.</msg>
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>Nguyễn Văn A</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:43.911257" elapsed="0.186291"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:44.097548" elapsed="0.055445"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:44.152993" level="INFO">Typing text '0912345678' into text field 'xpath=//input[@placeholder='090 123 4567']'.</msg>
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<arg>0912345678</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:44.152993" elapsed="0.162112"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:44.315105" elapsed="0.061125"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:44.376230" level="INFO">Typing text 'test@gmail.com' into text field 'xpath=//input[@type='email']'.</msg>
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<arg>test@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:44.376230" elapsed="0.163567"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:52:43.808856" elapsed="0.730941"/>
+</kw>
+<kw name="Click Confirm Booking" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:44.540695" elapsed="0.028285"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:52:44.568980" elapsed="0.302834"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:44.871814" level="INFO">Clicking element 'xpath=//button[contains(.,'XÁC NHẬN ĐẶT SÂN')]'.</msg>
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:44.871814" elapsed="0.122551"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:52:44.540695" elapsed="0.453670"/>
+</kw>
+<kw name="Cancel Booking In Modal" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.cd-modal</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:44.995396" elapsed="0.035172"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:45.031083" level="INFO">Clicking element 'css=.cd-btn--cancel'.</msg>
+<arg>css=.cd-btn--cancel</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:45.031083" elapsed="0.135425"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>css=.cd-modal</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:45.166508" elapsed="0.015267"/>
+</kw>
+<doc>Nhấn nút hủy trong popup</doc>
+<status status="PASS" start="2026-06-19T11:52:44.994365" elapsed="0.187410"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:45.337361" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-13.png"&gt;&lt;img src="screenshots/selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-19T11:52:45.181775" elapsed="0.155586"/>
+</kw>
+<doc>Kiểm tra người dùng có thể hủy booking tại popup xác nhận</doc>
+<tag>smoke</tag>
+<status status="PASS" start="2026-06-19T11:52:30.926346" elapsed="14.411015"/>
+</test>
+<kw name="Close Browser Application" owner="booking_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-19T11:52:45.338508" elapsed="2.195774"/>
+</kw>
+<doc>Đóng browser</doc>
+<status status="PASS" start="2026-06-19T11:52:45.338508" elapsed="2.195774"/>
+</kw>
+<doc>Smoke Tests - Kiểm tra chức năng đặt sân bóng</doc>
+<status status="PASS" start="2026-06-19T11:51:03.962837" elapsed="103.571445"/>
+</suite>
+<suite id="s1-s3" name="Booking Negative Tests" source="D:\TestRobotFrameWork POM\tests\booking\booking_negative_tests.robot">
+<kw name="Open Browser To Application" owner="booking_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:47.575071" level="INFO">Opening browser 'chrome' to base url 'https://football-booking-system-seven.vercel.app/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:52:47.575071" elapsed="2.686445"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-19T11:52:50.262536" elapsed="0.034193"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>${OUTPUT DIR}${/}screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-06-19T11:52:50.297737" elapsed="0.000509"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Football Booking</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:52:50.298246" elapsed="0.038938"/>
+</kw>
+<doc>Mở browser và truy cập website</doc>
+<status status="PASS" start="2026-06-19T11:52:47.570540" elapsed="2.766644"/>
+</kw>
+<test id="s1-s3-t1" name="TC_REG_01: Chọn Sân Từ Trang Chủ Rồi Đặt Sân" line="12">
+<kw name="Navigate To Home Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:50.339921" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:52:50.339759" elapsed="0.477110"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Football Booking</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:52:50.817387" elapsed="0.017367"/>
+</kw>
+<doc>Quay lại trang chủ</doc>
+<status status="PASS" start="2026-06-19T11:52:50.338711" elapsed="0.496043"/>
+</kw>
+<kw name="Select Pitch From Home" owner="booking_keywords">
+<kw name="Navigate To Home Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:50.837714" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:52:50.837714" elapsed="0.353251"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Football Booking</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:52:51.191021" elapsed="0.018843"/>
+</kw>
+<doc>Quay lại trang chủ</doc>
+<status status="PASS" start="2026-06-19T11:52:50.837714" elapsed="0.372150"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(@href,'/fields/')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:51.209864" elapsed="0.525786"/>
+</kw>
+<if>
+<branch type="IF" condition="'${pitch_name}' != '${EMPTY}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${pitch_link}</var>
+<arg>xpath=//h5[contains(normalize-space(.),'${pitch_name}')]/ancestor::div[contains(@class,'p-6')]//a[contains(@href,'/fields/')]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-06-19T11:52:51.736713" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${count}</var>
+<arg>${pitch_link}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:52:51.736713" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${count} &gt; 0">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${pitch_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:52:51.736713" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-06-19T11:52:51.736713" elapsed="0.000505"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(@href,'/fields/')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:52:51.737218" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-06-19T11:52:51.737218" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2026-06-19T11:52:51.736713" elapsed="0.000505"/>
+</if>
+<status status="NOT RUN" start="2026-06-19T11:52:51.735650" elapsed="0.001568"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:51.737218" level="INFO">Clicking element 'xpath=(//a[contains(@href,'/fields/')])[1]'.</msg>
+<arg>xpath=(//a[contains(@href,'/fields/')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:51.737218" elapsed="0.165801"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:52:51.737218" elapsed="0.165801"/>
+</branch>
+<status status="PASS" start="2026-06-19T11:52:51.735650" elapsed="0.168898"/>
+</if>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:52:51.904548" elapsed="0.683732"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:52:50.836203" elapsed="1.752077"/>
+</kw>
+<kw name="Select First Time Slot And Proceed To Booking" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:52.590441" elapsed="0.043985"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:52.634426" level="INFO">Clicking element 'xpath=//span[contains(text(),'Chưa chọn')]'.</msg>
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:52.634426" elapsed="0.144487"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:52:53.779058" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:52:52.778913" elapsed="1.000145"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:53.779058" elapsed="0.245587"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:54.025162" level="INFO">Clicking element 'xpath=(//button[contains(@class,'bf-slot-btn')])[1]'.</msg>
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:54.024645" elapsed="0.125374"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:52:55.150217" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:52:54.150019" elapsed="1.000198"/>
+</kw>
+<kw name="Click Proceed To Booking" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:55.151237" elapsed="0.037397"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:52:55.188634" elapsed="0.342138"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:55.531794" level="INFO">Clicking element 'xpath=//a[contains(.,'Tiến hành đặt sân')]'.</msg>
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:55.531794" elapsed="1.526928"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Xác nhận đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:52:57.058722" elapsed="0.041177"/>
+</kw>
+<doc>Chuyển từ chọn sân sang trang xác nhận đặt sân</doc>
+<status status="PASS" start="2026-06-19T11:52:55.150217" elapsed="1.949682"/>
+</kw>
+<doc>Chọn khung giờ đầu tiên và chuyển sang trang xác nhận đặt sân</doc>
+<status status="PASS" start="2026-06-19T11:52:52.588280" elapsed="4.511619"/>
+</kw>
+<kw name="Fill Customer Info" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:57.100813" elapsed="0.039981"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:57.140794" elapsed="0.079976"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:57.220770" level="INFO">Typing text 'Nguyễn Văn A' into text field 'xpath=//input[@placeholder='Nguyễn Văn A']'.</msg>
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:57.220770" elapsed="0.217760"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:57.438530" elapsed="0.058504"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:57.497572" level="INFO">Typing text '0912345678' into text field 'xpath=//input[@placeholder='090 123 4567']'.</msg>
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:57.497034" elapsed="0.145067"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:57.642101" elapsed="0.061678"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:57.703779" level="INFO">Typing text 'test@example.com' into text field 'xpath=//input[@type='email']'.</msg>
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:57.703779" elapsed="0.140102"/>
+</kw>
+<arg>Nguyễn Văn A</arg>
+<arg>0912345678</arg>
+<arg>test@example.com</arg>
+<status status="PASS" start="2026-06-19T11:52:57.100813" elapsed="0.743068"/>
+</kw>
+<kw name="Click Confirm Booking" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:57.844809" elapsed="0.031601"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:52:57.877433" elapsed="0.299159"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:58.176592" level="INFO">Clicking element 'xpath=//button[contains(.,'XÁC NHẬN ĐẶT SÂN')]'.</msg>
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:58.176592" elapsed="0.142985"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:52:57.843881" elapsed="0.475696"/>
+</kw>
+<kw name="Confirm Booking In Modal" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.cd-modal</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:52:58.319577" elapsed="0.068866"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:52:58.389976" level="INFO">Clicking element 'css=.cd-btn--confirm'.</msg>
+<arg>css=.cd-btn--confirm</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:52:58.388443" elapsed="0.218517"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:53:00.607337" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:52:58.607068" elapsed="2.000564"/>
+</kw>
+<doc>Nhấn nút xác nhận trong popup</doc>
+<status status="PASS" start="2026-06-19T11:52:58.319577" elapsed="2.288055"/>
+</kw>
+<kw name="Booking Should Be Successful" owner="booking_keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>thành công</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:53:00.607632" elapsed="0.037698"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:53:00.607632" elapsed="0.037698"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:52:50.337184" elapsed="10.308146"/>
+</test>
+<test id="s1-s3-t2" name="TC_REG_02: Chọn Sân Từ Trang Sân Bóng Rồi Đặt Sân" line="24">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:00.647915" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:53:00.647915" elapsed="0.381156"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:53:04.030534" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:53:01.029998" elapsed="3.000536"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:04.030534" elapsed="0.040009"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:53:04.070543" elapsed="0.303625"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:53:05.374256" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:53:04.374168" elapsed="1.000088"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:53:00.647915" elapsed="4.726341"/>
+</kw>
+<kw name="Add Pitch To Booking" owner="booking_keywords">
+<kw name="View Pitch Full Details" owner="booking_keywords">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:05.375788" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:53:05.375788" elapsed="0.391591"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:53:08.768676" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:53:05.767379" elapsed="3.001297"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:08.768676" elapsed="0.029263"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:53:08.797939" elapsed="0.305016"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:53:10.104399" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:53:09.102955" elapsed="1.001444"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:53:05.375274" elapsed="4.729125"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:10.104399" level="INFO">Clicking element 'xpath=//h5[contains(text(),'Test')]/ancestor::div[contains(@class,'p-6')]//a[contains(text(),'Xem chi tiết')]'.</msg>
+<arg>xpath=//h5[contains(text(),'${pitch_name}')]/ancestor::div[contains(@class,'p-6')]//a[contains(text(),'Xem chi tiết')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:10.104399" elapsed="0.148529"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:53:10.253972" elapsed="0.669886"/>
+</kw>
+<arg>${pitch_name}</arg>
+<status status="PASS" start="2026-06-19T11:53:05.375274" elapsed="5.548584"/>
+</kw>
+<kw name="Select First Time Slot And Proceed To Booking" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:10.923858" elapsed="0.033036"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:10.956894" level="INFO">Clicking element 'xpath=//span[contains(text(),'Chưa chọn')]'.</msg>
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:10.956894" elapsed="0.115523"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:53:12.074214" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:53:11.072417" elapsed="1.001797"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:12.074214" elapsed="0.046540"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:12.120754" level="INFO">Clicking element 'xpath=(//button[contains(@class,'bf-slot-btn')])[1]'.</msg>
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:12.120754" elapsed="0.140721"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:53:13.261685" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:53:12.261475" elapsed="1.000210"/>
+</kw>
+<kw name="Click Proceed To Booking" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:13.262219" elapsed="0.036265"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:53:13.298484" elapsed="0.310134"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:13.609638" level="INFO">Clicking element 'xpath=//a[contains(.,'Tiến hành đặt sân')]'.</msg>
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:13.608618" elapsed="0.144192"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Xác nhận đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:53:13.752810" elapsed="0.019594"/>
+</kw>
+<doc>Chuyển từ chọn sân sang trang xác nhận đặt sân</doc>
+<status status="PASS" start="2026-06-19T11:53:13.262219" elapsed="0.510185"/>
+</kw>
+<doc>Chọn khung giờ đầu tiên và chuyển sang trang xác nhận đặt sân</doc>
+<status status="PASS" start="2026-06-19T11:53:10.923858" elapsed="2.848546"/>
+</kw>
+<arg>Test</arg>
+<status status="PASS" start="2026-06-19T11:53:05.374256" elapsed="8.398148"/>
+</kw>
+<kw name="Fill Customer Info" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:13.773412" elapsed="0.038255"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:13.811667" elapsed="0.097221"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:13.908888" level="INFO">Typing text 'Trần Thị B' into text field 'xpath=//input[@placeholder='Nguyễn Văn A']'.</msg>
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:13.908888" elapsed="0.231872"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:14.140760" elapsed="0.070026"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:14.211292" level="INFO">Typing text '0987654321' into text field 'xpath=//input[@placeholder='090 123 4567']'.</msg>
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:14.211292" elapsed="0.133189"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:14.344481" elapsed="0.055536"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:14.400017" level="INFO">Typing text 'test2@example.com' into text field 'xpath=//input[@type='email']'.</msg>
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:14.400017" elapsed="0.190841"/>
+</kw>
+<arg>Trần Thị B</arg>
+<arg>0987654321</arg>
+<arg>test2@example.com</arg>
+<status status="PASS" start="2026-06-19T11:53:13.773412" elapsed="0.817446"/>
+</kw>
+<kw name="Click Confirm Booking" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:14.592390" elapsed="0.050977"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:53:14.643367" elapsed="0.318527"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:14.961894" level="INFO">Clicking element 'xpath=//button[contains(.,'XÁC NHẬN ĐẶT SÂN')]'.</msg>
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:14.961894" elapsed="0.125573"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:53:14.591869" elapsed="0.496625"/>
+</kw>
+<kw name="Confirm Booking In Modal" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.cd-modal</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:15.089007" elapsed="0.057041"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:15.147063" level="INFO">Clicking element 'css=.cd-btn--confirm'.</msg>
+<arg>css=.cd-btn--confirm</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:15.146048" elapsed="0.304256"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:53:17.450453" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:53:15.450304" elapsed="2.000149"/>
+</kw>
+<doc>Nhấn nút xác nhận trong popup</doc>
+<status status="PASS" start="2026-06-19T11:53:15.089007" elapsed="2.361446"/>
+</kw>
+<kw name="Booking Should Be Successful" owner="booking_keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>thành công</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:53:17.451486" elapsed="0.022129"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:53:17.450453" elapsed="0.023162"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:53:00.646873" elapsed="16.826742"/>
+</test>
+<test id="s1-s3-t3" name="TC_REG_03: Không Thể Đặt Sân Khi Không Điền Tên" line="35">
+<kw name="Navigate To Booking Page" owner="booking_keywords">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:17.476160" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:53:17.476160" elapsed="0.394489"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:53:20.871769" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:53:17.871483" elapsed="3.000286"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:20.872374" elapsed="0.036216"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:53:20.908590" elapsed="0.301237"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:53:22.210912" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:53:21.210377" elapsed="1.000535"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:53:17.476160" elapsed="4.734752"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:22.211456" elapsed="0.031419"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:22.242875" level="INFO">Clicking element 'xpath=(//a[contains(text(),'Xem chi tiết')])[1]'.</msg>
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:22.242875" elapsed="0.157127"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:53:22.400002" elapsed="0.717884"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:23.118903" elapsed="0.030248"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:23.149657" level="INFO">Clicking element 'xpath=//span[contains(text(),'Chưa chọn')]'.</msg>
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:23.149151" elapsed="0.126728"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:53:25.276440" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:53:23.275879" elapsed="2.000763"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:25.276642" elapsed="0.033429"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:25.310071" level="INFO">Clicking element 'xpath=(//button[contains(@class,'bf-slot-btn')])[1]'.</msg>
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:25.310071" elapsed="0.174064"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:53:27.484678" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:53:25.484135" elapsed="2.000543"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:27.536382" level="INFO">${slot_text} = 06:00 - 07:00</msg>
+<var>${slot_text}</var>
+<arg>xpath=//span[contains(@class,'text-slate-900')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:27.484678" elapsed="0.051704"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SLOT_SELECTED=${slot_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-19T11:53:27.536891" elapsed="0.000520"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:27.781559" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-14.png"&gt;&lt;img src="screenshots/selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-19T11:53:27.537411" elapsed="0.244148"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:27.814167" level="INFO">${selected} = 06:00 - 07:00</msg>
+<var>${selected}</var>
+<arg>xpath=//span[contains(@class,'text-slate-900')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:27.781559" elapsed="0.032608"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SELECTED_SLOT=${selected}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-19T11:53:27.814167" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:53:27.814167" elapsed="0.302371"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:53:30.117569" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:53:28.117064" elapsed="2.000505"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:30.117569" level="INFO">Clicking link 'xpath=//a[contains(.,'Tiến hành đặt sân')]'.</msg>
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:30.117569" elapsed="0.160203"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Xác nhận đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:53:30.277772" elapsed="0.029235"/>
+</kw>
+<doc>Điều hướng tới trang booking theo luồng thực tế</doc>
+<status status="PASS" start="2026-06-19T11:53:17.475134" elapsed="12.831873"/>
+</kw>
+<kw name="Fill Customer Info" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:30.309042" elapsed="0.039270"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:30.348312" elapsed="0.068112"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:30.417456" level="INFO">Typing text '' into text field 'xpath=//input[@placeholder='Nguyễn Văn A']'.</msg>
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:30.417456" elapsed="0.248515"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:30.665971" elapsed="0.114628"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:30.780685" level="INFO">Typing text '0912345678' into text field 'xpath=//input[@placeholder='090 123 4567']'.</msg>
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:30.780685" elapsed="0.351025"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:31.132730" elapsed="0.146438"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:31.280189" level="INFO">Typing text 'test@example.com' into text field 'xpath=//input[@type='email']'.</msg>
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:31.279676" elapsed="0.193353"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>0912345678</arg>
+<arg>test@example.com</arg>
+<status status="PASS" start="2026-06-19T11:53:30.307007" elapsed="1.166022"/>
+</kw>
+<kw name="Click Book Button" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:31.474027" elapsed="0.029737"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:53:31.505270" elapsed="0.315016"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:31.820286" level="INFO">Clicking element 'xpath=//button[contains(.,'XÁC NHẬN ĐẶT SÂN')]'.</msg>
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:31.820286" elapsed="0.145088"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:53:31.473029" elapsed="0.492345"/>
+</kw>
+<kw name="Booking Should Fail With Error" owner="booking_keywords">
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:32.002065" level="INFO">Current location contains '/booking'.</msg>
+<arg>/booking</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-06-19T11:53:31.970045" elapsed="0.033041"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:32.039437" level="INFO">Current page contains element 'xpath=//button[contains(.,'XÁC NHẬN ĐẶT SÂN')]'.</msg>
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:53:32.003086" elapsed="0.036948"/>
+</kw>
+<if>
+<branch type="IF" condition="'điện thoại' in '${error_message}'">
+<kw name="Get Value" owner="SeleniumLibrary">
+<var>${phone}</var>
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:53:32.042041" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${valid_phone}</var>
+<arg>len('''${phone}''') &gt;= 10 and '''${phone}'''.startswith('0')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-06-19T11:53:32.042041" elapsed="0.001185"/>
+</kw>
+<kw name="Should Not Be True" owner="BuiltIn">
+<arg>${valid_phone}</arg>
+<doc>Fails if the given condition is true.</doc>
+<status status="NOT RUN" start="2026-06-19T11:53:32.043226" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-06-19T11:53:32.040034" elapsed="0.003192"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-06-19T11:53:32.043226" level="INFO">${field} = xpath=//input[@placeholder='Nguyễn Văn A']</msg>
+<var>${field}</var>
+<arg>${FIELD_BOOKING_NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-06-19T11:53:32.043226" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'Email' in '${error_message}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${field}</var>
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-06-19T11:53:32.046566" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-06-19T11:53:32.044532" elapsed="0.002034"/>
+</branch>
+<status status="PASS" start="2026-06-19T11:53:32.044532" elapsed="0.002034"/>
+</if>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:32.088929" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="6dc1b9c75f1a747b551915fd99ed5613", element="f.48749305B926051FFDF846FB12EE7C66.d.2B5722CFB01560765EBEB8A79E5FD7E8.e.343")&gt;</msg>
+<var>${element}</var>
+<arg>${field}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:32.048472" elapsed="0.040457"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:32.092362" level="INFO">Executing JavaScript:
+return arguments[0].checkValidity();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="6dc1b9c75f1a747b551915fd99ed5613", element="f.48749305B926051FFDF846FB12EE7C66.d.2B5722CFB01560765EBEB8A79E5FD7E8.e.343")&gt;'</msg>
+<msg time="2026-06-19T11:53:32.138465" level="INFO">${valid} = False</msg>
+<var>${valid}</var>
+<arg>return arguments[0].checkValidity();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-19T11:53:32.089956" elapsed="0.048509"/>
+</kw>
+<kw name="Should Not Be True" owner="BuiltIn">
+<arg>${valid}</arg>
+<doc>Fails if the given condition is true.</doc>
+<status status="PASS" start="2026-06-19T11:53:32.140530" elapsed="0.001261"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:53:32.043226" elapsed="0.098565"/>
+</branch>
+<status status="PASS" start="2026-06-19T11:53:32.040034" elapsed="0.101757"/>
+</if>
+<arg>Tên khách hàng không được để trống</arg>
+<status status="PASS" start="2026-06-19T11:53:31.967423" elapsed="0.174368"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:53:17.473615" elapsed="14.677162"/>
+</test>
+<test id="s1-s3-t4" name="TC_REG_04: Không Thể Đặt Sân Khi Điền Số Điện Thoại Không Hợp Lệ" line="45">
+<kw name="Navigate To Booking Page" owner="booking_keywords">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:32.158647" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:53:32.158647" elapsed="0.517804"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:53:35.677741" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:53:32.677507" elapsed="3.000234"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:35.677741" elapsed="0.032160"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:53:35.709901" elapsed="0.304211"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:53:37.015695" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:53:36.014364" elapsed="1.001331"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:53:32.157903" elapsed="4.857792"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:37.015695" elapsed="0.041174"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:37.056869" level="INFO">Clicking element 'xpath=(//a[contains(text(),'Xem chi tiết')])[1]'.</msg>
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:37.056869" elapsed="0.126911"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:53:37.183780" elapsed="0.663242"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:37.847546" elapsed="0.033053"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:37.880696" level="INFO">Clicking element 'xpath=//span[contains(text(),'Chưa chọn')]'.</msg>
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:37.880696" elapsed="0.100320"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:53:39.981227" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:53:37.981016" elapsed="2.000211"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:39.981227" elapsed="0.033831"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:40.015058" level="INFO">Clicking element 'xpath=(//button[contains(@class,'bf-slot-btn')])[1]'.</msg>
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:40.015058" elapsed="0.143306"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:53:42.159006" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:53:40.158874" elapsed="2.000132"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:42.187855" level="INFO">${slot_text} = 06:00 - 07:00</msg>
+<var>${slot_text}</var>
+<arg>xpath=//span[contains(@class,'text-slate-900')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:42.159006" elapsed="0.028849"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SLOT_SELECTED=${slot_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-19T11:53:42.187855" elapsed="0.000590"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:42.455443" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-15.png"&gt;&lt;img src="screenshots/selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-19T11:53:42.188445" elapsed="0.266998"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:42.484517" level="INFO">${selected} = 06:00 - 07:00</msg>
+<var>${selected}</var>
+<arg>xpath=//span[contains(@class,'text-slate-900')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:42.455443" elapsed="0.029074"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SELECTED_SLOT=${selected}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-19T11:53:42.484517" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:53:42.485526" elapsed="0.301933"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:53:44.788104" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:53:42.787459" elapsed="2.000645"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:44.788908" level="INFO">Clicking link 'xpath=//a[contains(.,'Tiến hành đặt sân')]'.</msg>
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:44.788639" elapsed="0.148474"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Xác nhận đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:53:44.937621" elapsed="0.015374"/>
+</kw>
+<doc>Điều hướng tới trang booking theo luồng thực tế</doc>
+<status status="PASS" start="2026-06-19T11:53:32.156369" elapsed="12.796626"/>
+</kw>
+<kw name="Fill Customer Info" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:44.952995" elapsed="0.026740"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:44.980247" elapsed="0.060056"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:45.041787" level="INFO">Typing text 'Nguyễn Văn C' into text field 'xpath=//input[@placeholder='Nguyễn Văn A']'.</msg>
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:45.041787" elapsed="0.164660"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:45.206965" elapsed="0.049114"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:45.256609" level="INFO">Typing text '123' into text field 'xpath=//input[@placeholder='090 123 4567']'.</msg>
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:45.256609" elapsed="0.116299"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:45.372908" elapsed="0.060087"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:45.434004" level="INFO">Typing text 'test3@example.com' into text field 'xpath=//input[@type='email']'.</msg>
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:45.432995" elapsed="0.162393"/>
+</kw>
+<arg>Nguyễn Văn C</arg>
+<arg>123</arg>
+<arg>test3@example.com</arg>
+<status status="PASS" start="2026-06-19T11:53:44.952995" elapsed="0.642393"/>
+</kw>
+<kw name="Click Book Button" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:45.596944" elapsed="0.028081"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:53:45.626095" elapsed="4.533809"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:50.159904" level="INFO">Clicking element 'xpath=//button[contains(.,'XÁC NHẬN ĐẶT SÂN')]'.</msg>
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:50.159904" elapsed="0.146680"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:53:45.595388" elapsed="4.711196"/>
+</kw>
+<kw name="Booking Should Fail With Error" owner="booking_keywords">
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:50.317434" level="INFO">Current location contains '/booking'.</msg>
+<arg>/booking</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-06-19T11:53:50.308745" elapsed="0.010205"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:50.333116" level="INFO">Current page contains element 'xpath=//button[contains(.,'XÁC NHẬN ĐẶT SÂN')]'.</msg>
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:53:50.319063" elapsed="0.014053"/>
+</kw>
+<if>
+<branch type="IF" condition="'điện thoại' in '${error_message}'">
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:50.372585" level="INFO">${phone} = 123</msg>
+<var>${phone}</var>
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:53:50.333116" elapsed="0.039469"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-06-19T11:53:50.372585" level="INFO">${valid_phone} = False</msg>
+<var>${valid_phone}</var>
+<arg>len('''${phone}''') &gt;= 10 and '''${phone}'''.startswith('0')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-06-19T11:53:50.372585" elapsed="0.000000"/>
+</kw>
+<kw name="Should Not Be True" owner="BuiltIn">
+<arg>${valid_phone}</arg>
+<doc>Fails if the given condition is true.</doc>
+<status status="PASS" start="2026-06-19T11:53:50.372585" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:53:50.333116" elapsed="0.039469"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${field}</var>
+<arg>${FIELD_BOOKING_NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-06-19T11:53:50.372585" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'Email' in '${error_message}'">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${field}</var>
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-06-19T11:53:50.375097" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-06-19T11:53:50.372585" elapsed="0.002512"/>
+</branch>
+<status status="NOT RUN" start="2026-06-19T11:53:50.372585" elapsed="0.002512"/>
+</if>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<var>${element}</var>
+<arg>${field}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:53:50.375097" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<var>${valid}</var>
+<arg>return arguments[0].checkValidity();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2026-06-19T11:53:50.375097" elapsed="0.000000"/>
+</kw>
+<kw name="Should Not Be True" owner="BuiltIn">
+<arg>${valid}</arg>
+<doc>Fails if the given condition is true.</doc>
+<status status="NOT RUN" start="2026-06-19T11:53:50.375097" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-06-19T11:53:50.372585" elapsed="0.002512"/>
+</branch>
+<status status="PASS" start="2026-06-19T11:53:50.333116" elapsed="0.041981"/>
+</if>
+<arg>Số điện thoại không hợp lệ</arg>
+<status status="PASS" start="2026-06-19T11:53:50.308104" elapsed="0.066993"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:53:32.153355" elapsed="18.221742"/>
+</test>
+<test id="s1-s3-t5" name="TC_REG_05: Không Thể Đặt Sân Khi Điền Email Không Hợp Lệ" line="55">
+<kw name="Navigate To Booking Page" owner="booking_keywords">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:53:50.376806" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:53:50.376806" elapsed="0.370894"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:53:53.750185" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:53:50.749742" elapsed="3.000443"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:53:53.750572" elapsed="0.034969"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:53:53.785541" elapsed="5.323209"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:54:00.110253" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:53:59.109782" elapsed="1.000471"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:53:50.376806" elapsed="9.733447"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:54:00.110253" elapsed="0.029740"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:00.141150" level="INFO">Clicking element 'xpath=(//a[contains(text(),'Xem chi tiết')])[1]'.</msg>
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:00.139993" elapsed="0.105363"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:54:00.245356" elapsed="0.882951"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:54:01.128307" elapsed="0.038942"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:01.167249" level="INFO">Clicking element 'xpath=//span[contains(text(),'Chưa chọn')]'.</msg>
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:01.167249" elapsed="0.144176"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:54:03.311744" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:54:01.311425" elapsed="2.000319"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:54:03.311744" elapsed="0.034839"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:03.346583" level="INFO">Clicking element 'xpath=(//button[contains(@class,'bf-slot-btn')])[1]'.</msg>
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:03.346583" elapsed="0.091293"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:54:05.438124" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:54:03.437876" elapsed="2.000248"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:05.467772" level="INFO">${slot_text} = 06:00 - 07:00</msg>
+<var>${slot_text}</var>
+<arg>xpath=//span[contains(@class,'text-slate-900')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:05.438124" elapsed="0.029648"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SLOT_SELECTED=${slot_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-19T11:54:05.467772" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:05.880857" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-16.png"&gt;&lt;img src="screenshots/selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-19T11:54:05.468782" elapsed="0.412075"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:05.912211" level="INFO">${selected} = 06:00 - 07:00</msg>
+<var>${selected}</var>
+<arg>xpath=//span[contains(@class,'text-slate-900')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:05.880857" elapsed="0.031354"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SELECTED_SLOT=${selected}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-06-19T11:54:05.912211" elapsed="0.000000"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:54:05.912211" elapsed="0.293810"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:54:08.206582" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:54:06.206021" elapsed="2.000561"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:08.207341" level="INFO">Clicking link 'xpath=//a[contains(.,'Tiến hành đặt sân')]'.</msg>
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:08.207130" elapsed="0.132952"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Xác nhận đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:54:08.340618" elapsed="0.030026"/>
+</kw>
+<doc>Điều hướng tới trang booking theo luồng thực tế</doc>
+<status status="PASS" start="2026-06-19T11:53:50.376806" elapsed="17.993838"/>
+</kw>
+<kw name="Fill Customer Info" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:54:08.371536" elapsed="0.027934"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:08.400139" elapsed="0.062554"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:08.462693" level="INFO">Typing text 'Phạm Văn D' into text field 'xpath=//input[@placeholder='Nguyễn Văn A']'.</msg>
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:08.462693" elapsed="0.158746"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:08.621439" elapsed="0.055407"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:08.676846" level="INFO">Typing text '0901234567' into text field 'xpath=//input[@placeholder='090 123 4567']'.</msg>
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:08.676846" elapsed="0.140272"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:08.819242" elapsed="0.060385"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:08.879627" level="INFO">Typing text 'invalid-email' into text field 'xpath=//input[@type='email']'.</msg>
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:08.879627" elapsed="0.131145"/>
+</kw>
+<arg>Phạm Văn D</arg>
+<arg>0901234567</arg>
+<arg>invalid-email</arg>
+<status status="PASS" start="2026-06-19T11:54:08.371536" elapsed="0.639236"/>
+</kw>
+<kw name="Click Book Button" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:54:09.011280" elapsed="0.025187"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:54:09.036985" elapsed="0.298033"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:09.335018" level="INFO">Clicking element 'xpath=//button[contains(.,'XÁC NHẬN ĐẶT SÂN')]'.</msg>
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:09.335018" elapsed="0.095836"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:54:09.011280" elapsed="0.419574"/>
+</kw>
+<kw name="Booking Should Fail With Error" owner="booking_keywords">
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:09.439672" level="INFO">Current location contains '/booking'.</msg>
+<arg>/booking</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-06-19T11:54:09.432416" elapsed="0.007256"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:09.459244" level="INFO">Current page contains element 'xpath=//button[contains(.,'XÁC NHẬN ĐẶT SÂN')]'.</msg>
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:54:09.439672" elapsed="0.019572"/>
+</kw>
+<if>
+<branch type="IF" condition="'điện thoại' in '${error_message}'">
+<kw name="Get Value" owner="SeleniumLibrary">
+<var>${phone}</var>
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:54:09.459839" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${valid_phone}</var>
+<arg>len('''${phone}''') &gt;= 10 and '''${phone}'''.startswith('0')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-06-19T11:54:09.459839" elapsed="0.000000"/>
+</kw>
+<kw name="Should Not Be True" owner="BuiltIn">
+<arg>${valid_phone}</arg>
+<doc>Fails if the given condition is true.</doc>
+<status status="NOT RUN" start="2026-06-19T11:54:09.459839" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-06-19T11:54:09.459244" elapsed="0.000595"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-06-19T11:54:09.461352" level="INFO">${field} = xpath=//input[@placeholder='Nguyễn Văn A']</msg>
+<var>${field}</var>
+<arg>${FIELD_BOOKING_NAME}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-06-19T11:54:09.459839" elapsed="0.001513"/>
+</kw>
+<if>
+<branch type="IF" condition="'Email' in '${error_message}'">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-06-19T11:54:09.461352" level="INFO">${field} = xpath=//input[@type='email']</msg>
+<var>${field}</var>
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-06-19T11:54:09.461352" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:54:09.461352" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-06-19T11:54:09.461352" elapsed="0.000000"/>
+</if>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:09.489909" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="6dc1b9c75f1a747b551915fd99ed5613", element="f.48749305B926051FFDF846FB12EE7C66.d.3268D483ADD880D3D11132A696DF08C6.e.467")&gt;</msg>
+<var>${element}</var>
+<arg>${field}</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:09.461352" elapsed="0.028557"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:09.491640" level="INFO">Executing JavaScript:
+return arguments[0].checkValidity();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="6dc1b9c75f1a747b551915fd99ed5613", element="f.48749305B926051FFDF846FB12EE7C66.d.3268D483ADD880D3D11132A696DF08C6.e.467")&gt;'</msg>
+<msg time="2026-06-19T11:54:09.508634" level="INFO">${valid} = False</msg>
+<var>${valid}</var>
+<arg>return arguments[0].checkValidity();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-19T11:54:09.491640" elapsed="0.016994"/>
+</kw>
+<kw name="Should Not Be True" owner="BuiltIn">
+<arg>${valid}</arg>
+<doc>Fails if the given condition is true.</doc>
+<status status="PASS" start="2026-06-19T11:54:09.509744" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:54:09.459839" elapsed="0.049905"/>
+</branch>
+<status status="PASS" start="2026-06-19T11:54:09.459244" elapsed="0.050500"/>
+</if>
+<arg>Email không hợp lệ</arg>
+<status status="PASS" start="2026-06-19T11:54:09.432416" elapsed="0.077328"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:53:50.376806" elapsed="19.132938"/>
+</test>
+<test id="s1-s3-t6" name="TC_REG_06: Kiểm Tra Dữ Liệu Được Lưu Đúng Sau Khi Đặt Sân" line="65">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:09.512167" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:54:09.512167" elapsed="0.357296"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:54:12.869968" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:54:09.869463" elapsed="3.000505"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:54:12.870731" elapsed="0.027015"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:54:12.897746" elapsed="0.296487"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:54:14.194546" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:54:13.194233" elapsed="1.000313"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:54:09.511651" elapsed="4.682895"/>
+</kw>
+<kw name="Add Pitch To Booking" owner="booking_keywords">
+<kw name="View Pitch Full Details" owner="booking_keywords">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:14.196819" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:54:14.196254" elapsed="0.515385"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:54:17.713724" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:54:14.711639" elapsed="3.002085"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:54:17.714242" elapsed="0.029192"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:54:17.743551" elapsed="0.301853"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:54:19.045784" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:54:18.045404" elapsed="1.000380"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:54:14.196254" elapsed="4.849530"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:19.045784" level="INFO">Clicking element 'xpath=//h5[contains(text(),'Test')]/ancestor::div[contains(@class,'p-6')]//a[contains(text(),'Xem chi tiết')]'.</msg>
+<arg>xpath=//h5[contains(text(),'${pitch_name}')]/ancestor::div[contains(@class,'p-6')]//a[contains(text(),'Xem chi tiết')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:19.045784" elapsed="0.106703"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:54:19.153028" elapsed="0.661570"/>
+</kw>
+<arg>${pitch_name}</arg>
+<status status="PASS" start="2026-06-19T11:54:14.195700" elapsed="5.618898"/>
+</kw>
+<kw name="Select First Time Slot And Proceed To Booking" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:54:19.815662" elapsed="0.061482"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:19.877144" level="INFO">Clicking element 'xpath=//span[contains(text(),'Chưa chọn')]'.</msg>
+<arg>xpath=//span[contains(text(),'Chưa chọn')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:19.877144" elapsed="0.132310"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:54:21.011068" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:54:20.010140" elapsed="1.000928"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:54:21.011601" elapsed="0.029199"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:21.040800" level="INFO">Clicking element 'xpath=(//button[contains(@class,'bf-slot-btn')])[1]'.</msg>
+<arg>xpath=(//button[contains(@class,'bf-slot-btn')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:21.040800" elapsed="0.140523"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:54:22.182603" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:54:21.182337" elapsed="1.000266"/>
+</kw>
+<kw name="Click Proceed To Booking" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:54:22.183142" elapsed="0.030763"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:54:22.213905" elapsed="0.304016"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:22.518929" level="INFO">Clicking element 'xpath=//a[contains(.,'Tiến hành đặt sân')]'.</msg>
+<arg>xpath=//a[contains(.,'Tiến hành đặt sân')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:22.517921" elapsed="0.139256"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Xác nhận đặt sân</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:54:22.657177" elapsed="0.026112"/>
+</kw>
+<doc>Chuyển từ chọn sân sang trang xác nhận đặt sân</doc>
+<status status="PASS" start="2026-06-19T11:54:22.183142" elapsed="0.500147"/>
+</kw>
+<doc>Chọn khung giờ đầu tiên và chuyển sang trang xác nhận đặt sân</doc>
+<status status="PASS" start="2026-06-19T11:54:19.814598" elapsed="2.868691"/>
+</kw>
+<arg>Test</arg>
+<status status="PASS" start="2026-06-19T11:54:14.195177" elapsed="8.488112"/>
+</kw>
+<kw name="Fill Customer Info" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:54:22.684285" elapsed="0.032853"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_NAME}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:22.717138" elapsed="0.076854"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:22.795510" level="INFO">Typing text 'Hoàng Thị E' into text field 'xpath=//input[@placeholder='Nguyễn Văn A']'.</msg>
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:22.795510" elapsed="0.220298"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:23.015808" elapsed="0.083176"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:23.098984" level="INFO">Typing text '0876543210' into text field 'xpath=//input[@placeholder='090 123 4567']'.</msg>
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:23.098984" elapsed="0.155352"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:23.255524" elapsed="0.055688"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:23.311716" level="INFO">Typing text 'test5@example.com' into text field 'xpath=//input[@type='email']'.</msg>
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:23.311212" elapsed="0.139299"/>
+</kw>
+<arg>Hoàng Thị E</arg>
+<arg>0876543210</arg>
+<arg>test5@example.com</arg>
+<status status="PASS" start="2026-06-19T11:54:22.684285" elapsed="0.766226"/>
+</kw>
+<kw name="Textfield Value Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:23.511261" level="INFO">Content of text field 'xpath=//input[@placeholder='Nguyễn Văn A']' is 'Hoàng Thị E'.</msg>
+<arg>${FIELD_BOOKING_NAME}</arg>
+<arg>Hoàng Thị E</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<status status="PASS" start="2026-06-19T11:54:23.450511" elapsed="0.060750"/>
+</kw>
+<kw name="Textfield Value Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:23.558875" level="INFO">Content of text field 'xpath=//input[@placeholder='090 123 4567']' is '0876543210'.</msg>
+<arg>${FIELD_BOOKING_PHONE}</arg>
+<arg>0876543210</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<status status="PASS" start="2026-06-19T11:54:23.511261" elapsed="0.047614"/>
+</kw>
+<kw name="Textfield Value Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:23.601961" level="INFO">Content of text field 'xpath=//input[@type='email']' is 'test5@example.com'.</msg>
+<arg>${FIELD_BOOKING_EMAIL}</arg>
+<arg>test5@example.com</arg>
+<doc>Verifies text field ``locator`` has exactly text ``expected``.</doc>
+<status status="PASS" start="2026-06-19T11:54:23.559781" elapsed="0.042180"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:23.629948" level="INFO">Current page contains text 'Test'.</msg>
+<arg>Test</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-19T11:54:23.602951" elapsed="0.026997"/>
+</kw>
+<kw name="Click Confirm Booking" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:54:23.631463" elapsed="0.026448"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:54:23.658423" elapsed="0.289410"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:23.947833" level="INFO">Clicking element 'xpath=//button[contains(.,'XÁC NHẬN ĐẶT SÂN')]'.</msg>
+<arg>${BUTTON_CONFIRM_BOOKING}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:23.947833" elapsed="0.116531"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:54:23.630956" elapsed="0.433408"/>
+</kw>
+<kw name="Confirm Booking In Modal" owner="booking_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.cd-modal</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:54:24.065385" elapsed="0.040168"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:24.106065" level="INFO">Clicking element 'css=.cd-btn--confirm'.</msg>
+<arg>css=.cd-btn--confirm</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:24.106065" elapsed="0.239213"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:54:26.347063" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:54:24.346833" elapsed="2.000230"/>
+</kw>
+<doc>Nhấn nút xác nhận trong popup</doc>
+<status status="PASS" start="2026-06-19T11:54:24.064364" elapsed="2.282699"/>
+</kw>
+<kw name="Booking Should Be Successful" owner="booking_keywords">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>thành công</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:54:26.348096" elapsed="0.020979"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:54:26.347063" elapsed="0.022012"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:54:09.510649" elapsed="16.858426"/>
+</test>
+<kw name="Close Browser Application" owner="booking_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-19T11:54:26.370226" elapsed="2.201212"/>
+</kw>
+<doc>Đóng browser</doc>
+<status status="PASS" start="2026-06-19T11:54:26.370226" elapsed="2.201212"/>
+</kw>
+<doc>Regression Tests - Kiểm tra các lỗi tái diễn</doc>
+<status status="PASS" start="2026-06-19T11:52:47.534282" elapsed="101.037156"/>
+</suite>
+<suite id="s1-s4" name="Booking Quick Tests" source="D:\TestRobotFrameWork POM\tests\booking\booking_quick_tests.robot">
+<kw name="Open Browser To Application" owner="booking_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:28.585320" level="INFO">Opening browser 'chrome' to base url 'https://football-booking-system-seven.vercel.app/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:54:28.585320" elapsed="3.436660"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-19T11:54:32.021980" elapsed="0.045662"/>
+</kw>
+<kw name="Set Screenshot Directory" owner="SeleniumLibrary">
+<arg>${OUTPUT DIR}${/}screenshots</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" start="2026-06-19T11:54:32.067642" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Football Booking</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:54:32.067642" elapsed="0.033653"/>
+</kw>
+<doc>Mở browser và truy cập website</doc>
+<status status="PASS" start="2026-06-19T11:54:28.584935" elapsed="3.516360"/>
+</kw>
+<test id="s1-s4-t1" name="TC_SMOKE_BOOKING_01" line="10">
+<kw name="Navigate To Pitches Page" owner="booking_keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:32.102911" level="INFO">Opening url 'https://football-booking-system-seven.vercel.app//fields'</msg>
+<arg>${URL}/fields</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-19T11:54:32.102911" elapsed="0.481556"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:54:35.585637" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:54:32.584467" elapsed="3.001170"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-19T11:54:35.585637" elapsed="0.053289"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//a[contains(text(),'Xem chi tiết')])[1]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-06-19T11:54:35.638926" elapsed="0.341901"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-19T11:54:36.981194" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-19T11:54:35.980827" elapsed="1.000367"/>
+</kw>
+<status status="PASS" start="2026-06-19T11:54:32.102911" elapsed="4.878283"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:36.981194" level="INFO">Clicking element 'xpath=(//a[contains(.,'Xem chi tiết')])[1]'.</msg>
+<arg>xpath=(//a[contains(.,'Xem chi tiết')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-19T11:54:36.981194" elapsed="0.158872"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Lịch đặt sân</arg>
+<arg>20s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-19T11:54:37.142775" elapsed="0.698365"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-19T11:54:37.842302" level="INFO">Clicking element 'xpath=(//div[contains(@class,'fd-slot--available')])[1]'.</msg>
+<msg time="2026-06-19T11:54:38.176614" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/selenium-screenshot-17.png"&gt;&lt;img src="screenshots/selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-19T11:54:38.177153" level="FAIL">Element with locator 'xpath=(//div[contains(@class,'fd-slot--available')])[1]' not found.</msg>
+<arg>xpath=(//div[contains(@class,'fd-slot--available')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-19T11:54:37.841140" elapsed="0.336013">Element with locator 'xpath=(//div[contains(@class,'fd-slot--available')])[1]' not found.</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//a[@href='/booking']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:54:38.177153" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Xác nhận đặt sân</arg>
+<arg>20s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2026-06-19T11:54:38.177153" elapsed="0.002046"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>xpath=//button[contains(@class,'bk-submit-btn')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-19T11:54:38.179199" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-06-19T11:54:38.179746" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-06-19T11:54:38.179746" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2026-06-19T11:54:32.101295" elapsed="6.078451">Element with locator 'xpath=(//div[contains(@class,'fd-slot--available')])[1]' not found.</status>
+</test>
+<kw name="Close Browser Application" owner="booking_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-19T11:54:38.180882" elapsed="2.167144"/>
+</kw>
+<doc>Đóng browser</doc>
+<status status="PASS" start="2026-06-19T11:54:38.180882" elapsed="2.168106"/>
+</kw>
+<doc>Smoke Test - Đặt sân bóng</doc>
+<status status="FAIL" start="2026-06-19T11:54:28.573860" elapsed="11.775128"/>
+</suite>
+<status status="FAIL" start="2026-06-19T11:50:09.083555" elapsed="271.266670"/>
+</suite>
+<statistics>
+<total>
+<stat pass="14" fail="5" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="8" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat name="Booking" id="s1" pass="14" fail="5" skip="0">Booking</stat>
+<stat name="Booking Flow Tests" id="s1-s1" pass="0" fail="4" skip="0">Booking.Booking Flow Tests</stat>
+<stat name="Booking Modal Tests" id="s1-s2" pass="8" fail="0" skip="0">Booking.Booking Modal Tests</stat>
+<stat name="Booking Negative Tests" id="s1-s3" pass="6" fail="0" skip="0">Booking.Booking Negative Tests</stat>
+<stat name="Booking Quick Tests" id="s1-s4" pass="0" fail="1" skip="0">Booking.Booking Quick Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
