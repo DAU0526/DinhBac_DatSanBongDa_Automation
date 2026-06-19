@@ -1,12 +1,10 @@
-# Chặn các file báo cáo sinh ra ở thư mục gốc
 *.html
 *.xml
 *.png
 
-# Chặn toàn bộ thư mục kết quả results
-results/
+results/*
+!results/.gitkeep
 
-# Các file cấu hình môi trường/hệ thống (nếu có)
 .venv/
 venv/
 __pycache__/
