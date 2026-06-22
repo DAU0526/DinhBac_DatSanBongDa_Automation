@@ -30,3 +30,5 @@ class FieldDetailPageLocators:
     # Service Names
     SERVICE_NAME_GIAY = "Giày"
     SERVICE_NAME_NUOC = "Nước"
+
+field_detail_locators = FieldDetailPageLocators()

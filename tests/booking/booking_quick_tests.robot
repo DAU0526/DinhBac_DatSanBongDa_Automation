@@ -16,16 +16,7 @@ TC_SMOKE_BOOKING_01
     Wait Until Page Contains
     ...    Lịch đặt sân
     ...    20s
-
-    Click Element
-    ...    xpath=(//div[contains(@class,'fd-slot--available')])[1]
-
-    Click Element
-    ...    xpath=//a[@href='/booking']
-
-    Wait Until Page Contains
-    ...    Xác nhận đặt sân
-    ...    20s
+    Select First Time Slot And Proceed To Booking
 
     Click Button
     ...    xpath=//button[contains(@class,'bk-submit-btn')]

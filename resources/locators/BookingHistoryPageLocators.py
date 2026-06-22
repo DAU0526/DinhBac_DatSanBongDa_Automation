@@ -6,3 +6,5 @@ class BookingHistoryPageLocators:
     BOOKING_HISTORY_DATE = "xpath=(//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')])[1]//*[contains(@class,'booking-date') or contains(@class,'date') or contains(text(),'Ngày') or contains(text(),'ngày')]"
     BOOKING_HISTORY_TIME_SLOT = "xpath=(//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')])[1]//*[contains(@class,'time') or contains(@class,'slot') or contains(text(),':')]"
     BOOKING_HISTORY_STATUS = "xpath=(//div[contains(@class,'booking-card') or contains(@class,'booking-item') or contains(@class,'order-card') or contains(@class,'history-item')])[1]//*[contains(@class,'status') or contains(@class,'badge') or contains(@class,'tag')]"
+
+booking_history_locators = BookingHistoryPageLocators()

@@ -34,7 +34,7 @@ TC_TIME_REG_03: Chọn Khung Giờ Thay Đổi Trạng Thái Slot Thành Selecte
     Open Time Slot Selection
     Page Should Contain Element    ${TIMESLOT_SELECTED}
     Page Should Not Contain Element
-    ...    xpath://div[contains(@class,'fd-slot--selected') and contains(@class,'fd-slot--available')]
+    ...    xpath://button[contains(@class,'selected') and not(contains(@class,'booked'))]
 
 TC_TIME_REG_04: Chọn Slot Cụ Thể 14:00 Và Xác Nhận Được Chọn
     [Documentation]    Kiểm tra chọn slot 14:00 → class fd-slot--selected có span 14:00
@@ -98,7 +98,7 @@ TC_TIME_REG_11: Slot Đã Booked Không Thể Chọn
     ${booked_count}=    Get Element Count    ${TIMESLOT_BOOKED}
     IF    ${booked_count} > 0
         ${booked_time}=    Get Text
-        ...    xpath:(//div[contains(@class,'fd-slot--booked')]//span[@class='slot-time'])[1]
+        ...    xpath:(//button[contains(@class,'bf-slot-btn') and contains(@class,'booked')]//span[contains(@class,'slot-time-label')])[1]
         Time Slot Should Be Booked    ${booked_time}
         Time Slot Should Not Be Available    ${booked_time}
     ELSE

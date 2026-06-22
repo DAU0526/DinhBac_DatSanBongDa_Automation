@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    ../locators/FieldsPageLocators.py    WITH NAME    fields_locators
-Library    ../locators/FieldDetailPageLocators.py    WITH NAME    field_detail_locators
+Variables    ../locators/FieldsPageLocators.py
+Variables    ../locators/FieldDetailPageLocators.py
 Resource   ../common_variables.robot
 Resource   ../page_objects/FieldsPage.resource
 Resource   ../page_objects/FieldDetailPage.resource
@@ -24,13 +24,13 @@ Get Timeslot Count
     [Arguments]    ${date}=${EMPTY}
     [Documentation]    Đếm số lượng khung giờ hiển thị
     Open Time Slot Selection
-    ${count}=    Get Element Count    ${field_detail_locators.TIMESLOT_ITEM}
+    ${count}=    Get Element Count    ${TIMESLOT_ITEM}
     RETURN    ${count}
 
 Get Available Timeslot Count
     [Documentation]    Đếm số lượng khung giờ còn trống (có thể đặt)
     Open Time Slot Selection
-    ${count}=    Get Element Count    ${field_detail_locators.TIMESLOT_AVAILABLE}
+    ${count}=    Get Element Count    ${TIMESLOT_AVAILABLE}
     RETURN    ${count}
 
 Get Booked Timeslot Count
@@ -55,20 +55,20 @@ Get Selected Time Slot
 
 Get Booking Summary Time
     [Documentation]    Lấy thông tin khung giờ hiển thị trong sidebar đặt sân
-    ${text}=    Get Text    ${field_detail_locators.SIDEBAR_TIMESLOT_DISPLAY}
+    ${text}=    Get Text    ${SIDEBAR_TIMESLOT_DISPLAY}
     RETURN    ${text}
 
 Get Booking Total Price
     [Documentation]    Lấy tổng tiền hiển thị trong sidebar đặt sân
-    ${total}=    Get Text    ${field_detail_locators.SIDEBAR_TOTAL_PRICE}
+    ${total}=    Get Text    ${SIDEBAR_TOTAL_PRICE}
     RETURN    ${total}
 
 # ===================== TIME SLOT - INTERACT =====================
 Open Time Slot Selection
     [Documentation]    Click vào sidebar để hiển thị khu vực chọn khung giờ nếu chưa mở
-    ${is_visible}=    Run Keyword And Return Status    Element Should Be Visible    ${field_detail_locators.TIMESLOT_GRID}
-    Run Keyword If    not ${is_visible}    Click Element    ${field_detail_locators.SIDEBAR_TIMESLOT_DISPLAY}
-    Wait Until Element Is Visible    ${field_detail_locators.TIMESLOT_GRID}    ${TIMEOUT}
+    ${is_visible}=    Run Keyword And Return Status    Element Should Be Visible    ${TIMESLOT_GRID}
+    Run Keyword If    not ${is_visible}    Click Element    ${SIDEBAR_TIMESLOT_DISPLAY}
+    Wait Until Element Is Visible    ${TIMESLOT_GRID}    ${TIMEOUT}
 
 Select Time Slot By Time
     [Arguments]    ${time}
@@ -81,15 +81,15 @@ Select Time Slot By Time
 Select First Available Time Slot
     [Documentation]    Chọn khung giờ còn trống đầu tiên
     Open Time Slot Selection
-    Wait Until Element Is Visible    ${field_detail_locators.TIMESLOT_AVAILABLE}    ${TIMEOUT}
-    Click Element    ${field_detail_locators.TIMESLOT_AVAILABLE}
+    Wait Until Element Is Visible    ${TIMESLOT_AVAILABLE}    ${TIMEOUT}
+    Click Element    ${TIMESLOT_AVAILABLE}
     Sleep    0.5s
 
 Select Time Slot By Index
     [Arguments]    ${index}
     [Documentation]    Chọn khung giờ theo vị trí (0-based)
     Open Time Slot Selection
-    ${slots}=    Get WebElements    ${field_detail_locators.TIMESLOT_AVAILABLE}
+    ${slots}=    Get WebElements    ${TIMESLOT_AVAILABLE}
     Click Element    ${slots}[${index}]
     Sleep    0.5s
 
@@ -124,14 +124,14 @@ Time Slot Should Be Selected
 
 Sidebar Should Show Selected Time
     [Documentation]    Xác nhận sidebar cập nhật thông tin khung giờ đã chọn
-    Element Should Not Contain    ${field_detail_locators.SIDEBAR_TIMESLOT_DISPLAY}    Chưa chọn
+    Element Should Not Contain    ${SIDEBAR_TIMESLOT_DISPLAY}    Chưa chọn
 
 Proceed Button Should Be Active
     [Documentation]    Xác nhận nút "Tiến hành đặt sân" đã active (không còn cursor-not-allowed)
-    ${class}=    Get Element Attribute    ${field_detail_locators.SIDEBAR_PROCEED_BTN}    class
+    ${class}=    Get Element Attribute    ${SIDEBAR_PROCEED_BTN}    class
     Should Not Contain    ${class}    cursor-not-allowed
 
 Proceed Button Should Be Inactive
     [Documentation]    Xác nhận nút "Tiến hành đặt sân" vẫn bị disabled
-    ${class}=    Get Element Attribute    ${field_detail_locators.SIDEBAR_PROCEED_BTN}    class
+    ${class}=    Get Element Attribute    ${SIDEBAR_PROCEED_BTN}    class
     Should Contain    ${class}    cursor-not-allowed

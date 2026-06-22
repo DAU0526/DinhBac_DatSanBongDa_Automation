@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    ../locators/BasePageLocators.py    WITH NAME    base_locators
+Variables    ../locators/BasePageLocators.py
 Resource   ../common_variables.robot
 
 *** Keywords ***

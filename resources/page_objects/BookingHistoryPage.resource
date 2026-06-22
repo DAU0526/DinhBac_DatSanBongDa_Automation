@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    ../locators/BookingHistoryPageLocators.py    WITH NAME    booking_history_locators
+Variables    ../locators/BookingHistoryPageLocators.py
 Resource   ../common_variables.robot
 
 *** Keywords ***

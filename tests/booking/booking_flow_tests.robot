@@ -16,7 +16,10 @@ TC_BOOKING_REG_01
 
     Wait Until Page Contains    Lịch đặt sân    10s
 
-    Click Element    xpath=//div[contains(@class,'fd-slot--available') and .//span[text()='06:00']]
+    Wait Until Element Is Visible    xpath=//span[contains(text(),'Chưa chọn')]    10s
+    Click Element    xpath=//span[contains(text(),'Chưa chọn')]
+    Sleep    1s
+    Click Element    xpath=//button[contains(@class,'bf-slot-btn') and not(contains(@class,'booked')) and .//span[contains(text(),'06:00')]]
 
     Click Element    xpath=//a[contains(.,'Tiến hành đặt sân')]
 

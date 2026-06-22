@@ -6,3 +6,5 @@ class HomePageLocators:
     HOME_TYPE_SELECT = "xpath://select[2] | xpath://combobox[contains(text(), 'Loại sân')]"
     HOME_DATE_INPUT = "xpath://input[@type='date' or @type='text'][contains(@placeholder, 'date' or 'ngày')]"
     HOME_SEARCH_BTN = "xpath://button[contains(text(), 'Tìm sân')]"
+
+home_locators = HomePageLocators()

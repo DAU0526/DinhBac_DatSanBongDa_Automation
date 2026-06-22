@@ -6,3 +6,5 @@ class BasePageLocators:
     NAV_BOOKING = "xpath=//a[@href='/booking']"
     NAV_LOOKUP = "xpath=//a[@href='/lookup']"
     NAV_MY_BOOKINGS = "xpath=//a[@href='/my-bookings']"
+
+base_locators = BasePageLocators()

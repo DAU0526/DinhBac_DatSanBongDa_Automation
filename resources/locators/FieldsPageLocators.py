@@ -25,3 +25,5 @@ class FieldsPageLocators:
     PAGINATION_BTN_2 = "xpath://button[contains(text(), '2')]"
     PAGINATION_BTN_NEXT = "xpath://button[contains(text(), '›')]"
     PAGINATION_BTN_PREV = "xpath://button[contains(text(), '‹')]"
+
+fields_locators = FieldsPageLocators()

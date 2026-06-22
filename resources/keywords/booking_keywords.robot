@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    ../locators/BookingPageLocators.py    WITH NAME    booking_locators
-Library    ../locators/FieldDetailPageLocators.py    WITH NAME    field_detail_locators
+Variables    ../locators/BookingPageLocators.py
+Variables    ../locators/FieldDetailPageLocators.py
 Resource   ../common_variables.robot
 Resource   ../common_variables.robot
 Resource   ../page_objects/BasePage.resource
@@ -207,7 +207,7 @@ Select First Time Slot And Proceed To Booking
 Select Date On Calendar
     [Arguments]    ${date}
 
-    Click Element    ${booking_locators.FIELD_SELECT_DATE}
+    Click Element    ${FIELD_SELECT_DATE}
 
     Wait Until Page Contains
     ...    ${date}
@@ -221,7 +221,7 @@ Select Date On Calendar
 Select Time Slot
     [Arguments]    ${time}
 
-    Click Element    ${booking_locators.FIELD_SELECT_TIME}
+    Click Element    ${FIELD_SELECT_TIME}
 
     Wait Until Page Contains
     ...    ${time}
@@ -235,43 +235,43 @@ Fill Customer Info
     [Arguments]    ${name}    ${phone}    ${email}
 
     Wait Until Element Is Visible
-    ...    ${booking_locators.FIELD_BOOKING_NAME}
+    ...    ${FIELD_BOOKING_NAME}
     ...    ${TIMEOUT}
 
-    Clear Element Text    ${booking_locators.FIELD_BOOKING_NAME}
-    Input Text    ${booking_locators.FIELD_BOOKING_NAME}    ${name}
+    Clear Element Text    ${FIELD_BOOKING_NAME}
+    Input Text    ${FIELD_BOOKING_NAME}    ${name}
 
-    Clear Element Text    ${booking_locators.FIELD_BOOKING_PHONE}
-    Input Text    ${booking_locators.FIELD_BOOKING_PHONE}    ${phone}
+    Clear Element Text    ${FIELD_BOOKING_PHONE}
+    Input Text    ${FIELD_BOOKING_PHONE}    ${phone}
 
-    Clear Element Text    ${booking_locators.FIELD_BOOKING_EMAIL}
-    Input Text    ${booking_locators.FIELD_BOOKING_EMAIL}    ${email}
+    Clear Element Text    ${FIELD_BOOKING_EMAIL}
+    Input Text    ${FIELD_BOOKING_EMAIL}    ${email}
 
 Fill Booking Information
 
     Wait Until Element Is Visible
-    ...    ${booking_locators.FIELD_BOOKING_NAME}
+    ...    ${FIELD_BOOKING_NAME}
     ...    ${TIMEOUT}
 
     Clear Element Text
-    ...    ${booking_locators.FIELD_BOOKING_NAME}
+    ...    ${FIELD_BOOKING_NAME}
 
     Input Text
-    ...    ${booking_locators.FIELD_BOOKING_NAME}
+    ...    ${FIELD_BOOKING_NAME}
     ...    Nguyễn Văn A
 
     Clear Element Text
-    ...    ${booking_locators.FIELD_BOOKING_PHONE}
+    ...    ${FIELD_BOOKING_PHONE}
 
     Input Text
-    ...    ${booking_locators.FIELD_BOOKING_PHONE}
+    ...    ${FIELD_BOOKING_PHONE}
     ...    0912345678
 
     Clear Element Text
-    ...    ${booking_locators.FIELD_BOOKING_EMAIL}
+    ...    ${FIELD_BOOKING_EMAIL}
 
     Input Text
-    ...    ${booking_locators.FIELD_BOOKING_EMAIL}
+    ...    ${FIELD_BOOKING_EMAIL}
     ...    test@gmail.com
 
 # Booking Page - Confirmation Keywords
@@ -318,14 +318,14 @@ Cancel Booking In Modal
 Click Proceed To Booking
     [Documentation]    Chuyển từ chọn sân sang trang xác nhận đặt sân
     Wait Until Element Is Visible
-    ...    ${field_detail_locators.SIDEBAR_PROCEED_BTN}
+    ...    ${SIDEBAR_PROCEED_BTN}
     ...    ${TIMEOUT}
 
     Scroll Element Into View
-    ...    ${field_detail_locators.SIDEBAR_PROCEED_BTN}
+    ...    ${SIDEBAR_PROCEED_BTN}
 
     Click Element
-    ...    ${field_detail_locators.SIDEBAR_PROCEED_BTN}
+    ...    ${SIDEBAR_PROCEED_BTN}
 
     Wait Until Page Contains
     ...    Xác nhận đặt sân
@@ -333,36 +333,36 @@ Click Proceed To Booking
 
 Click Confirm Booking
     Wait Until Element Is Visible
-    ...    ${booking_locators.BUTTON_CONFIRM_BOOKING}
+    ...    ${BUTTON_CONFIRM_BOOKING}
     ...    ${TIMEOUT}
 
     Scroll Element Into View
-    ...    ${booking_locators.BUTTON_CONFIRM_BOOKING}
+    ...    ${BUTTON_CONFIRM_BOOKING}
 
     Click Element
-    ...    ${booking_locators.BUTTON_CONFIRM_BOOKING}
+    ...    ${BUTTON_CONFIRM_BOOKING}
 
 Click Book Button
     Wait Until Element Is Visible
-    ...    ${booking_locators.BUTTON_CONFIRM_BOOKING}
+    ...    ${BUTTON_CONFIRM_BOOKING}
     ...    ${TIMEOUT}
 
     Scroll Element Into View
-    ...    ${booking_locators.BUTTON_CONFIRM_BOOKING}
+    ...    ${BUTTON_CONFIRM_BOOKING}
 
     Click Element
-    ...    ${booking_locators.BUTTON_CONFIRM_BOOKING}
+    ...    ${BUTTON_CONFIRM_BOOKING}
 
 Confirm Booking
 
     Fill Booking Information
 
     Wait Until Element Is Visible
-    ...    ${booking_locators.BUTTON_CONFIRM_BOOKING}
+    ...    ${BUTTON_CONFIRM_BOOKING}
     ...    ${TIMEOUT}
 
     Click Element
-    ...    ${booking_locators.BUTTON_CONFIRM_BOOKING}
+    ...    ${BUTTON_CONFIRM_BOOKING}
 
     Sleep    3s
 
@@ -377,16 +377,16 @@ Booking Should Fail With Error
     [Arguments]    ${error_message}
 
     Location Should Contain    /booking
-    Page Should Contain Element    ${booking_locators.BUTTON_CONFIRM_BOOKING}
+    Page Should Contain Element    ${BUTTON_CONFIRM_BOOKING}
 
     IF    'điện thoại' in '${error_message}'
-        ${phone}=    Get Value    ${booking_locators.FIELD_BOOKING_PHONE}
+        ${phone}=    Get Value    ${FIELD_BOOKING_PHONE}
         ${valid_phone}=    Evaluate    len('''${phone}''') >= 10 and '''${phone}'''.startswith('0')
         Should Not Be True    ${valid_phone}
     ELSE
-        ${field}=    Set Variable    ${booking_locators.FIELD_BOOKING_NAME}
+        ${field}=    Set Variable    ${FIELD_BOOKING_NAME}
         IF    'Email' in '${error_message}'
-            ${field}=    Set Variable    ${booking_locators.FIELD_BOOKING_EMAIL}
+            ${field}=    Set Variable    ${FIELD_BOOKING_EMAIL}
         END
 
         ${element}=    Get WebElement    ${field}

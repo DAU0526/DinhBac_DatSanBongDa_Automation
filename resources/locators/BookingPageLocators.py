@@ -10,3 +10,5 @@ class BookingPageLocators:
     MESSAGE_SUCCESS = "xpath=//*[contains(text(),'Đặt sân thành công')]"
     MESSAGE_ERROR = "xpath://div[contains(@class, 'error') or contains(@class, 'alert-error') or contains(@class, 'text-red')]"
     MODAL_DIALOG = "xpath://div[contains(@role, 'dialog') or contains(@class, 'modal')]"
+
+booking_locators = BookingPageLocators()

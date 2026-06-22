@@ -17,3 +17,5 @@ class AuthPageLocators:
     FIELD_REGISTER_PASSWORD_CONFIRM = "xpath://input[@id='confirmPassword']"
     BUTTON_REGISTER = "xpath://button[@type='submit']"
     LINK_LOGIN = "xpath://a[@href='/login']"
+
+auth_locators = AuthPageLocators()

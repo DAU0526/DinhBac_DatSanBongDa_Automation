@@ -1,8 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    ../locators/BasePageLocators.py    WITH NAME    base_locators
-Library    ../locators/AuthPageLocators.py    WITH NAME    auth_locators
-Library    ../locators/LookupPageLocators.py    WITH NAME    lookup_locators
+Variables    ../locators/BasePageLocators.py
+Variables    ../locators/AuthPageLocators.py
+Variables    ../locators/LookupPageLocators.py
 Resource   ../common_variables.robot
 Resource   ../common_variables.robot
 Resource   ../page_objects/BasePage.resource
@@ -20,20 +20,20 @@ Navigate To Lookup Page
 
 Navigate To Lookup Via Nav
     [Documentation]    Điều hướng tới trang Tra cứu qua menu điều hướng
-    Wait Until Element Is Visible    ${base_locators.NAV_LOOKUP}    ${TIMEOUT}
-    Click Element    ${base_locators.NAV_LOOKUP}
+    Wait Until Element Is Visible    ${NAV_LOOKUP}    ${TIMEOUT}
+    Click Element    ${NAV_LOOKUP}
     Sleep    2s
-    Wait Until Element Is Visible    ${lookup_locators.LOOKUP_INPUT}    ${TIMEOUT}
+    Wait Until Element Is Visible    ${LOOKUP_INPUT}    ${TIMEOUT}
 
 # ========================= LOGIN HELPER =========================
 Login For Lookup Test
     [Documentation]    Đăng nhập bằng tài khoản 04858758475 / 12345 để test tra cứu
     Go To    ${URL}/login
     Wait Until Page Contains    Đăng nhập    ${TIMEOUT}
-    Wait Until Element Is Visible    ${auth_locators.FIELD_LOGIN_EMAIL}    ${TIMEOUT}
-    Input Text    ${auth_locators.FIELD_LOGIN_EMAIL}    ${BOOKING_HISTORY_PHONE}
-    Input Text    ${auth_locators.FIELD_LOGIN_PASSWORD}    ${BOOKING_HISTORY_PASSWORD}
-    Click Element    ${auth_locators.BUTTON_LOGIN}
+    Wait Until Element Is Visible    ${FIELD_LOGIN_EMAIL}    ${TIMEOUT}
+    Input Text    ${FIELD_LOGIN_EMAIL}    ${BOOKING_HISTORY_PHONE}
+    Input Text    ${FIELD_LOGIN_PASSWORD}    ${BOOKING_HISTORY_PASSWORD}
+    Click Element    ${BUTTON_LOGIN}
     Sleep    3s
 
 # ========================= LOOKUP PAGE - ELEMENT CHECKS =========================
@@ -45,18 +45,18 @@ Lookup Page Should Be Displayed
 
 Input Field Should Be Visible And Enabled
     [Documentation]    Kiểm tra ô nhập mã đặt sân hiển thị và sẵn sàng nhập
-    Element Should Be Visible    ${lookup_locators.LOOKUP_INPUT}
-    Element Should Be Enabled    ${lookup_locators.LOOKUP_INPUT}
+    Element Should Be Visible    ${LOOKUP_INPUT}
+    Element Should Be Enabled    ${LOOKUP_INPUT}
 
 Input Field Placeholder Should Be Correct
     [Documentation]    Kiểm tra placeholder của ô nhập mã là "VD: BK123456"
-    ${placeholder}=    Get Element Attribute    ${lookup_locators.LOOKUP_INPUT}    placeholder
+    ${placeholder}=    Get Element Attribute    ${LOOKUP_INPUT}    placeholder
     Should Be Equal    ${placeholder}    VD: BK123456
 
 Lookup Button Should Be Visible And Enabled
     [Documentation]    Kiểm tra nút "Tra cứu ngay" hiển thị và có thể click
-    Element Should Be Visible    ${lookup_locators.LOOKUP_BUTTON}
-    Element Should Be Enabled    ${lookup_locators.LOOKUP_BUTTON}
+    Element Should Be Visible    ${LOOKUP_BUTTON}
+    Element Should Be Enabled    ${LOOKUP_BUTTON}
 
 Lookup Button Should Have Search Icon
     [Documentation]    Kiểm tra nút Tra cứu có icon search
@@ -66,23 +66,23 @@ Lookup Button Should Have Search Icon
 Enter Booking Code
     [Arguments]    ${booking_code}
     [Documentation]    Nhập mã đặt sân vào ô tra cứu
-    Wait Until Element Is Visible    ${lookup_locators.LOOKUP_INPUT}    ${TIMEOUT}
-    Clear Element Text    ${lookup_locators.LOOKUP_INPUT}
-    Input Text    ${lookup_locators.LOOKUP_INPUT}    ${booking_code}
-    ${value}=    Get Value    ${lookup_locators.LOOKUP_INPUT}
+    Wait Until Element Is Visible    ${LOOKUP_INPUT}    ${TIMEOUT}
+    Clear Element Text    ${LOOKUP_INPUT}
+    Input Text    ${LOOKUP_INPUT}    ${booking_code}
+    ${value}=    Get Value    ${LOOKUP_INPUT}
     Should Be Equal    ${value}    ${booking_code}
     Log    Đã nhập mã tra cứu: ${booking_code}
 
 Clear Booking Code Input
     [Documentation]    Xóa nội dung ô nhập mã
-    Clear Element Text    ${lookup_locators.LOOKUP_INPUT}
-    ${value}=    Get Value    ${lookup_locators.LOOKUP_INPUT}
+    Clear Element Text    ${LOOKUP_INPUT}
+    ${value}=    Get Value    ${LOOKUP_INPUT}
     Should Be Empty    ${value}
 
 Click Lookup Button
     [Documentation]    Nhấn nút "Tra cứu ngay"
-    Wait Until Element Is Visible    ${lookup_locators.LOOKUP_BUTTON}    ${TIMEOUT}
-    Click Element    ${lookup_locators.LOOKUP_BUTTON}
+    Wait Until Element Is Visible    ${LOOKUP_BUTTON}    ${TIMEOUT}
+    Click Element    ${LOOKUP_BUTTON}
     Sleep    2s
 
 Lookup Booking Code
@@ -96,9 +96,9 @@ Lookup Should Show Result
     [Documentation]    Kiểm tra có kết quả tra cứu hiển thị (dù tìm thấy hay không)
     Sleep    2s
     ${found_result}=    Run Keyword And Return Status
-    ...    Element Should Be Visible    ${lookup_locators.LOOKUP_RESULT_SUCCESS}
+    ...    Element Should Be Visible    ${LOOKUP_RESULT_SUCCESS}
     ${found_not_found}=    Run Keyword And Return Status
-    ...    Element Should Be Visible    ${lookup_locators.LOOKUP_RESULT_NOT_FOUND}
+    ...    Element Should Be Visible    ${LOOKUP_RESULT_NOT_FOUND}
     ${has_any_response}=    Evaluate    ${found_result} or ${found_not_found}
     Should Be True    ${has_any_response}
     ...    msg=Sau khi tra cứu không có kết quả hoặc thông báo nào hiển thị
@@ -106,7 +106,7 @@ Lookup Should Show Result
 Lookup Should Show Not Found Message
     [Documentation]    Kiểm tra thông báo "không tìm thấy" khi mã không tồn tại
     Sleep    2s
-    Element Should Be Visible    ${lookup_locators.LOOKUP_RESULT_NOT_FOUND}
+    Element Should Be Visible    ${LOOKUP_RESULT_NOT_FOUND}
     Log    Hệ thống hiển thị thông báo không tìm thấy đúng như mong đợi
 
 Lookup With Valid Code Should Show Result
@@ -124,7 +124,7 @@ Lookup With Invalid Code Should Show Not Found
 Input Field Value Should Be
     [Arguments]    ${expected_value}
     [Documentation]    Kiểm tra giá trị hiện tại trong ô nhập mã
-    ${actual}=    Get Value    ${lookup_locators.LOOKUP_INPUT}
+    ${actual}=    Get Value    ${LOOKUP_INPUT}
     Should Be Equal    ${actual}    ${expected_value}
     Log    Giá trị ô nhập: ${actual}
 
@@ -136,5 +136,5 @@ Can Input Booking Code
 
 Press Enter To Lookup
     [Documentation]    Nhấn Enter thay vì click nút để tra cứu
-    Press Keys    ${lookup_locators.LOOKUP_INPUT}    RETURN
+    Press Keys    ${LOOKUP_INPUT}    RETURN
     Sleep    2s

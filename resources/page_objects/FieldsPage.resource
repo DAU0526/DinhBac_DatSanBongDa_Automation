@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    ../locators/FieldsPageLocators.py    WITH NAME    fields_locators
+Variables    ../locators/FieldsPageLocators.py
 Resource   ../common_variables.robot
 
 *** Keywords ***
