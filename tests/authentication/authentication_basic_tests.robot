@@ -3,7 +3,7 @@ Documentation    Smoke Tests - Kiểm tra Đăng Nhập/Đăng Kí
 Library          SeleniumLibrary
 Resource         ../../resources/keywords/authentication_keywords.robot
 Resource         ../../resources/keywords/booking_keywords.robot
-Resource         ../../resources/variables/variables.robot
+Resource         ../../resources/common_variables.robot
 Suite Setup      Open Browser To Application
 Suite Teardown   Close Browser Application
 

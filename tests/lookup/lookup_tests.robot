@@ -6,7 +6,7 @@ Documentation       Regression Tests - Tra cứu đơn đặt sân
 Library             SeleniumLibrary
 Resource            ../../resources/keywords/lookup_keywords.robot
 Resource            ../../resources/keywords/booking_keywords.robot
-Resource            ../../resources/variables/variables.robot
+Resource            ../../resources/common_variables.robot
 
 Suite Setup         Open Browser To Application
 Suite Teardown      Close Browser Application

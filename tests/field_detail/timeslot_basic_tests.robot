@@ -3,7 +3,7 @@ Documentation    Smoke Tests - Kiểm tra Khung Giờ Trên Trang Chi Tiết Sâ
 Library          SeleniumLibrary
 Resource         ../../resources/keywords/booking_keywords.robot
 Resource         ../../resources/keywords/timeslot_keywords.robot
-Resource         ../../resources/variables/variables.robot
+Resource         ../../resources/common_variables.robot
 Suite Setup      Open Browser To Application
 Suite Teardown   Close Browser Application
 

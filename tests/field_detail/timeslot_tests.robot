@@ -3,7 +3,7 @@ Documentation    Regression Tests - Kiểm tra Chi Tiết Khung Giờ Trên Tran
 Library          SeleniumLibrary
 Resource         ../../resources/keywords/booking_keywords.robot
 Resource         ../../resources/keywords/timeslot_keywords.robot
-Resource         ../../resources/variables/variables.robot
+Resource         ../../resources/common_variables.robot
 Suite Setup      Open Browser To Application
 Suite Teardown   Close Browser Application
 

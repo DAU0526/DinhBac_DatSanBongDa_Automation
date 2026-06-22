@@ -3,7 +3,7 @@ Documentation    Regression Tests - Kiểm tra Chi Tiết Dịch Vụ Đi Kèm T
 Library          SeleniumLibrary
 Resource         ../../resources/keywords/booking_keywords.robot
 Resource         ../../resources/keywords/services_keywords.robot
-Resource         ../../resources/variables/variables.robot
+Resource         ../../resources/common_variables.robot
 Suite Setup      Open Browser To Application
 Suite Teardown   Close Browser Application
 

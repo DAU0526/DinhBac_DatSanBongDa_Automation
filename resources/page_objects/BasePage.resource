@@ -1,13 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource   ../config/environment.robot
-
-*** Variables ***
-${NAV_HOME}                     xpath=//a[@href='/']
-${NAV_FIELDS}                   xpath=//a[@href='/fields']
-${NAV_BOOKING}                  xpath=//a[@href='/booking']
-${NAV_LOOKUP}                   xpath=//a[@href='/lookup']
-${NAV_MY_BOOKINGS}              xpath=//a[@href='/my-bookings']
+Library    ../locators/BasePageLocators.py    WITH NAME    base_locators
+Resource   ../common_variables.robot
 
 *** Keywords ***
 Open Application

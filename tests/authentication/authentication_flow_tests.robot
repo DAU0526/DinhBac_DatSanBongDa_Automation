@@ -4,7 +4,7 @@ Library          SeleniumLibrary
 Library          String
 Resource         ../../resources/keywords/authentication_keywords.robot
 Resource         ../../resources/keywords/booking_keywords.robot
-Resource         ../../resources/variables/variables.robot
+Resource         ../../resources/common_variables.robot
 Suite Setup     Init Test Environment
 Suite Teardown   Close Browser Application
 *** Test Cases ***

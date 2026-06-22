@@ -1,8 +1,9 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource   ../config/environment.robot
-Resource   ../pages/fields_page.robot
-Resource   booking_keywords.robot
+Resource   ../common_variables.robot
+Library    ../locators/FieldsPageLocators.py    WITH NAME    fields_locators
+Resource   ../page_objects/FieldsPage.resource
+Resource   ../booking_keywords.robot
 
 *** Keywords ***
 # Pitch Selection Keywords

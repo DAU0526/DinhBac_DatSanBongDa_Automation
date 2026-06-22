@@ -1,28 +1,28 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource   ../config/environment.robot
-Resource   ../testdata/booking_data.robot
-Resource   ../pages/auth_page.robot
+Library    ../locators/AuthPageLocators.py    WITH NAME    auth_locators
+Resource   ../common_variables.robot
+Resource   ../page_objects/AuthPage.resource
 
 *** Keywords ***
 # Login Keywords
 Navigate To Login Page
     Go To    ${URL}/login
     Wait Until Page Contains    Đăng nhập
-    Wait Until Page Contains Element    ${FIELD_LOGIN_EMAIL}
+    Wait Until Page Contains Element    ${auth_locators.FIELD_LOGIN_EMAIL}
 
 Enter Login Email
     [Arguments]    ${email}
     [Documentation]    Nhập email đăng nhập
-    Input Text    ${FIELD_LOGIN_EMAIL}    ${email}
+    Input Text    ${auth_locators.FIELD_LOGIN_EMAIL}    ${email}
 
 Enter Login Password
     [Arguments]    ${password}
     [Documentation]    Nhập mật khẩu đăng nhập
-    Input Text    ${FIELD_LOGIN_PASSWORD}    ${password}
+    Input Text    ${auth_locators.FIELD_LOGIN_PASSWORD}    ${password}
 
 Click Login Button
-    Click Element    ${BUTTON_LOGIN}
+    Click Element    ${auth_locators.BUTTON_LOGIN}
     Run Keyword And Ignore Error    Handle Any Alert
 
 Login With Valid Credentials
@@ -46,19 +46,19 @@ Login Should Fail With Error
 Navigate To Register Page
     Go To    ${URL}/register
     Wait Until Page Contains    Đăng ký tài khoản
-    Wait Until Page Contains Element    ${FIELD_REGISTER_NAME}
+    Wait Until Page Contains Element    ${auth_locators.FIELD_REGISTER_NAME}
 
 Fill Register Form
     [Arguments]    ${name}    ${email}    ${phone}    ${password}    ${password_confirm}
     [Documentation]    Điền form đăng kí
-    Input Text    ${FIELD_REGISTER_NAME}    ${name}
-    Input Text    ${FIELD_REGISTER_EMAIL}    ${email}
-    Input Text    ${FIELD_REGISTER_PHONE}    ${phone}
-    Input Text    ${FIELD_REGISTER_PASSWORD}    ${password}
-    Input Text    ${FIELD_REGISTER_PASSWORD_CONFIRM}    ${password_confirm}
+    Input Text    ${auth_locators.FIELD_REGISTER_NAME}    ${name}
+    Input Text    ${auth_locators.FIELD_REGISTER_EMAIL}    ${email}
+    Input Text    ${auth_locators.FIELD_REGISTER_PHONE}    ${phone}
+    Input Text    ${auth_locators.FIELD_REGISTER_PASSWORD}    ${password}
+    Input Text    ${auth_locators.FIELD_REGISTER_PASSWORD_CONFIRM}    ${password_confirm}
 
 Click Register Button
-    Click Element    ${BUTTON_REGISTER}
+    Click Element    ${auth_locators.BUTTON_REGISTER}
     Wait Until Element Is Visible
     ...    xpath=//p[contains(@class,'text-green-600')]
     ...    10s
@@ -85,14 +85,14 @@ Register Should Fail With Error
 Clear And Enter Login Email
     [Arguments]    ${email}
     [Documentation]    Xóa email cũ và nhập email mới
-    Clear Element Text    ${FIELD_LOGIN_EMAIL}
-    Input Text    ${FIELD_LOGIN_EMAIL}    ${email}
+    Clear Element Text    ${auth_locators.FIELD_LOGIN_EMAIL}
+    Input Text    ${auth_locators.FIELD_LOGIN_EMAIL}    ${email}
 
 Clear And Enter Login Password
     [Arguments]    ${password}
     [Documentation]    Xóa mật khẩu cũ và nhập mật khẩu mới
-    Clear Element Text    ${FIELD_LOGIN_PASSWORD}
-    Input Text    ${FIELD_LOGIN_PASSWORD}    ${password}
+    Clear Element Text    ${auth_locators.FIELD_LOGIN_PASSWORD}
+    Input Text    ${auth_locators.FIELD_LOGIN_PASSWORD}    ${password}
 
 Login Email Should Show Error
     [Arguments]    ${error_message}
@@ -102,19 +102,19 @@ Login Email Should Show Error
 Login Email Should Be Valid
     [Arguments]    ${email}
     [Documentation]    Kiểm tra email nhập vào hợp lệ
-    Textfield Value Should Be    ${FIELD_LOGIN_EMAIL}    ${email}
+    Textfield Value Should Be    ${auth_locators.FIELD_LOGIN_EMAIL}    ${email}
 
 Login Password Should Be Valid
     [Arguments]    ${password}
     [Documentation]    Kiểm tra mật khẩu nhập vào hợp lệ
-    Textfield Value Should Be    ${FIELD_LOGIN_PASSWORD}    ${password}
+    Textfield Value Should Be    ${auth_locators.FIELD_LOGIN_PASSWORD}    ${password}
 
 # Validation Keywords - Registration Field Validation
 Clear And Enter Register Name
     [Arguments]    ${name}
     [Documentation]    Xóa tên cũ và nhập tên mới
-    Clear Element Text    ${FIELD_REGISTER_NAME}
-    Input Text    ${FIELD_REGISTER_NAME}    ${name}
+    Clear Element Text    ${auth_locators.FIELD_REGISTER_NAME}
+    Input Text    ${auth_locators.FIELD_REGISTER_NAME}    ${name}
 
 Clear And Enter Register Username
     [Arguments]    ${username}
@@ -124,26 +124,26 @@ Clear And Enter Register Username
 Clear And Enter Register Email
     [Arguments]    ${email}
     [Documentation]    Xóa email cũ và nhập email mới
-    Clear Element Text    ${FIELD_REGISTER_EMAIL}
-    Input Text    ${FIELD_REGISTER_EMAIL}    ${email}
+    Clear Element Text    ${auth_locators.FIELD_REGISTER_EMAIL}
+    Input Text    ${auth_locators.FIELD_REGISTER_EMAIL}    ${email}
 
 Clear And Enter Register Phone
     [Arguments]    ${phone}
     [Documentation]    Xóa số điện thoại cũ và nhập số mới
-    Clear Element Text    ${FIELD_REGISTER_PHONE}
-    Input Text    ${FIELD_REGISTER_PHONE}    ${phone}
+    Clear Element Text    ${auth_locators.FIELD_REGISTER_PHONE}
+    Input Text    ${auth_locators.FIELD_REGISTER_PHONE}    ${phone}
 
 Clear And Enter Register Password
     [Arguments]    ${password}
     [Documentation]    Xóa mật khẩu cũ và nhập mật khẩu mới
-    Clear Element Text    ${FIELD_REGISTER_PASSWORD}
-    Input Text    ${FIELD_REGISTER_PASSWORD}    ${password}
+    Clear Element Text    ${auth_locators.FIELD_REGISTER_PASSWORD}
+    Input Text    ${auth_locators.FIELD_REGISTER_PASSWORD}    ${password}
 
 Clear And Enter Register Password Confirm
     [Arguments]    ${password}
     [Documentation]    Xóa xác nhận mật khẩu cũ và nhập mới
-    Clear Element Text    ${FIELD_REGISTER_PASSWORD_CONFIRM}
-    Input Text    ${FIELD_REGISTER_PASSWORD_CONFIRM}    ${password}
+    Clear Element Text    ${auth_locators.FIELD_REGISTER_PASSWORD_CONFIRM}
+    Input Text    ${auth_locators.FIELD_REGISTER_PASSWORD_CONFIRM}    ${password}
 
 Register Name Should Show Error
     [Arguments]    ${error_message}
@@ -168,7 +168,7 @@ Register Password Should Show Error
 Register Name Is Valid
     [Arguments]    ${name}
     [Documentation]    Kiểm tra name hợp lệ
-    Textfield Value Should Be    ${FIELD_REGISTER_NAME}    ${name}
+    Textfield Value Should Be    ${auth_locators.FIELD_REGISTER_NAME}    ${name}
 
 Register Username Is Valid
     [Arguments]    ${username}
@@ -178,17 +178,17 @@ Register Username Is Valid
 Register Email Is Valid
     [Arguments]    ${email}
     [Documentation]    Kiểm tra email hợp lệ
-    Textfield Value Should Be    ${FIELD_REGISTER_EMAIL}    ${email}
+    Textfield Value Should Be    ${auth_locators.FIELD_REGISTER_EMAIL}    ${email}
 
 Register Phone Is Valid
     [Arguments]    ${phone}
     [Documentation]    Kiểm tra phone hợp lệ
-    Textfield Value Should Be    ${FIELD_REGISTER_PHONE}    ${phone}
+    Textfield Value Should Be    ${auth_locators.FIELD_REGISTER_PHONE}    ${phone}
 
 Register Password Is Valid
     [Arguments]    ${password}
     [Documentation]    Kiểm tra mật khẩu hợp lệ
-    Element Should Be Visible    ${FIELD_REGISTER_PASSWORD}
+    Element Should Be Visible    ${auth_locators.FIELD_REGISTER_PASSWORD}
 
 # Field Type Validation Keywords
 Test Email Format

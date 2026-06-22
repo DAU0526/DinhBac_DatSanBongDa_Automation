@@ -1,9 +1,9 @@
 *** Settings ***
 Library          SeleniumLibrary
 Library          OperatingSystem
-Resource         ../../resources/keywords/booking_keywords.robot
-Resource         ../../resources/keywords/timeslot_keywords.robot
-Resource         ../../resources/variables/variables.robot
+Resource         ./keywords/booking_keywords.robot
+Resource         ./keywords/timeslot_keywords.robot
+Resource         ../resources/common_variables.robot
 Suite Setup      Open Browser To Application
 Suite Teardown   Close Browser Application
 

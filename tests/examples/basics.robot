@@ -1,8 +1,8 @@
 *** Settings ***
 Documentation    Hướng Dẫn Cơ Bản - Ôn Lại Python/Robot Framework
 Library          SeleniumLibrary
-Resource         ../../resources/keywords/booking_keywords.robot
-Resource         ../../resources/variables/variables.robot
+Resource         ./keywords/booking_keywords.robot
+Resource         ../resources/common_variables.robot
 
 *** Keywords ***
 # Keyword ví dụ: Học cách làm việc với biến

@@ -1,9 +1,11 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource   ../config/environment.robot
-Resource   ../pages/fields_page.robot
-Resource   ../pages/field_detail_page.robot
-Resource   booking_keywords.robot
+Library    ../locators/FieldsPageLocators.py    WITH NAME    fields_locators
+Library    ../locators/FieldDetailPageLocators.py    WITH NAME    field_detail_locators
+Resource   ../common_variables.robot
+Resource   ../page_objects/FieldsPage.resource
+Resource   ../page_objects/FieldDetailPage.resource
+Resource   ../booking_keywords.robot
 
 *** Keywords ***
 # ===================== NAVIGATION =====================
@@ -25,18 +27,18 @@ Navigate To Field Detail Page
 View Available Services
     [Documentation]    Xác nhận khu vực dịch vụ đi kèm (service-section) hiển thị
     Page Should Contain    Dịch vụ đi kèm
-    Wait Until Page Contains Element    ${SERVICES_LIST}    ${TIMEOUT}
+    Wait Until Page Contains Element    ${field_detail_locators.SERVICES_LIST}    ${TIMEOUT}
 
     Capture Page Screenshot
 
 Get Available Services
     [Documentation]    Trả về danh sách tất cả các ss-card trên trang
-    ${cards}=    Get WebElements    ${SERVICE_CARD}
+    ${cards}=    Get WebElements    ${field_detail_locators.SERVICE_CARD}
     RETURN    ${cards}
 
 Get Service Count
     [Documentation]    Đếm số lượng dịch vụ (ss-card) hiển thị
-    ${count}=    Get Element Count    ${SERVICE_CARD}
+    ${count}=    Get Element Count    ${field_detail_locators.SERVICE_CARD}
     RETURN    ${count}
 
 Get Service Quantity
@@ -55,7 +57,7 @@ Get Service Price
 
 Get Sidebar Service Total
     [Documentation]    Lấy tổng tiền dịch vụ thêm hiển thị trong sidebar
-    ${total}=    Get Text    ${SIDEBAR_SERVICE_PRICE}
+    ${total}=    Get Text    ${field_detail_locators.SIDEBAR_SERVICE_PRICE}
     RETURN    ${total}
 
 # ===================== INTERACT =====================

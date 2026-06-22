@@ -8,27 +8,36 @@ Toàn bộ project được chia thành các tầng (layers) phân tách rõ rà
 
 ```text
 TestRobotFrameWork POM/
-├── docs/                      # Tài liệu hướng dẫn chi tiết
 ├── results/                   # Thư mục chứa báo cáo test (HTML/XML) sau khi chạy
 ├── resources/                 # Nơi chứa các thành phần dùng chung (POM Layers)
-│   ├── config/                # Chứa thiết lập môi trường
-│   │   └── environment.robot  # Base URL, browser, timeout, delay...
-│   ├── testdata/              # Chứa dữ liệu test (Test Data)
-│   │   └── booking_data.robot # Các account, dữ liệu mẫu...
-│   ├── pages/                 # Tầng Page Object: Chứa các Locators và hàm tương tác cơ bản UI
-│   │   ├── base_page.robot          # Browser setup và điều hướng chung
-│   │   ├── auth_page.robot          # Trang Đăng nhập/Đăng ký
-│   │   ├── fields_page.robot        # Trang Danh sách sân
-│   │   ├── field_detail_page.robot  # Trang Chi tiết sân (Khung giờ, dịch vụ)
-│   │   ├── booking_page.robot       # Trang Thanh toán/Xác nhận đặt sân
-│   │   ├── lookup_page.robot        # Trang Tra cứu đơn đặt sân
-│   │   └── booking_history_page.robot # Trang Lịch sử đặt sân
-│   ├── keywords/              # Tầng Business Logic: Kết hợp các Page Objects thành luồng nghiệp vụ
+│   ├── common_variables.robot # Biến môi trường + Test data
+│   ├── keywords/              # Tầng Business Logic: Kết hợp Page Objects thành luồng nghiệp vụ
 │   │   ├── authentication_keywords.robot
 │   │   ├── booking_keywords.robot
-│   │   └── ...
-│   └── variables/             # (Legacy) Biến toàn cục, đang dịch chuyển dần sang POM
-├── tests/                     # Tầng Test Suites: Chứa các kịch bản test (Test Cases)
+│   │   ├── booking_history_keywords.robot
+│   │   ├── lookup_keywords.robot
+│   │   ├── pitch_selection_keywords.robot
+│   │   ├── services_keywords.robot
+│   │   └── timeslot_keywords.robot
+│   ├── locators/              # Tầng Locators: Python classes chứa CSS/XPath selectors
+│   │   ├── AuthPageLocators.py
+│   │   ├── BasePageLocators.py
+│   │   ├── BookingPageLocators.py
+│   │   ├── FieldDetailPageLocators.py
+│   │   ├── FieldsPageLocators.py
+│   │   ├── HomePageLocators.py
+│   │   ├── LookupPageLocators.py
+│   │   └── BookingHistoryPageLocators.py
+│   └── page_objects/          # Tầng Page Object: Robot Framework resource files
+│       ├── AuthPage.resource
+│       ├── BasePage.resource
+│       ├── BookingPage.resource
+│       ├── FieldDetailPage.resource
+│       ├── FieldsPage.resource
+│       ├── HomePage.resource
+│       ├── LookupPage.resource
+│       └── BookingHistoryPage.resource
+├── tests/                     # Tầng Test Suites
 │   ├── authentication/        # Tests cho Đăng nhập, Đăng ký
 │   ├── booking/               # Tests cho Form đặt sân, xác nhận
 │   ├── booking_history/       # Tests cho Lịch sử đặt sân của user
@@ -36,7 +45,9 @@ TestRobotFrameWork POM/
 │   ├── field_detail/          # Tests cho Khung giờ và dịch vụ đi kèm
 │   ├── lookup/                # Tests cho Tra cứu đơn đặt sân bằng mã code
 │   ├── integration/           # End-to-end flows nối nhiều chức năng
+│   ├── debug/                 # Debug tests
 │   └── examples/              # Ví dụ học tập/cấu trúc cơ bản
+├── requirements.txt           # Danh sách dependencies Python
 └── README.md                  # Hướng dẫn chính
 ```
 
@@ -76,23 +87,28 @@ Theo kiến trúc mới, tests được gom theo chức năng. Bạn có thể c
 
 ```powershell
 # Chạy nhóm Đăng nhập / Đăng ký (Authentication)
-python -m robot --outputdir results/auth tests/authentication/
+robot --outputdir results/auth tests/authentication/
 
 # Chạy chức năng Tìm kiếm & Chọn sân (Pitch Selection)
-python -m robot --outputdir results/pitch tests/fields/
+robot --outputdir results/fields tests/fields/
 
 # Chạy chức năng chọn khung giờ & dịch vụ đi kèm (Time Slot & Services)
-python -m robot --outputdir results/field_detail tests/field_detail/
+robot --outputdir results/field_detail tests/field_detail/
 
 # Chạy chức năng Đặt sân (Booking)
-python -m robot --outputdir results/booking tests/booking/
+robot --outputdir results/booking tests/booking/
 
-# Chạy chức năng Tra cứu đơn đặt sân / Lịch sử đặt sân (Lookup & Booking History)
-python -m robot --outputdir results/lookup tests/lookup/
-python -m robot --outputdir results/history tests/booking_history/
+# Chạy chức năng Lịch sử đặt sân (Booking History)
+robot --outputdir results/booking_history tests/booking_history/
+
+# Chạy chức năng Tra cứu đơn đặt sân (Lookup)
+robot --outputdir results/lookup tests/lookup/
+
+# Chạy các luồng end-to-end (Integration)
+robot --outputdir results/integration tests/integration/
 
 # Chạy tất cả các test trong project
-python -m robot --outputdir results tests
+robot --outputdir results tests
 ```
 
 ### 2. Chạy theo Tags (Phân loại Test)
@@ -100,10 +116,10 @@ Các test case được đánh dấu bằng tag (`smoke`, `regression`, `auth`, 
 
 ```powershell
 # Chỉ chạy smoke tests (Kiểm tra luồng chính)
-python -m robot --include smoke --outputdir results/smoke tests
+robot --include smoke --outputdir results/smoke tests
 
 # Chỉ chạy regression tests (Kiểm thử hồi quy chi tiết)
-python -m robot --include regression --outputdir results/regression tests
+robot --include regression --outputdir results/regression tests
 ```
 
 ### 3. Cấu hình Môi Trường (Ghi đè biến)
@@ -111,28 +127,9 @@ Rất hữu ích khi cần chạy đa trình duyệt hoặc đa môi trường:
 
 ```powershell
 # Chạy trên Firefox (thay vì Chrome mặc định)
-python -m robot --variable BROWSER:firefox --outputdir results tests
+robot --variable BROWSER:firefox --outputdir results tests
 
 # Chạy với Base URL khác (Staging/Production)
-python -m robot --variable URL:https://staging.example.com/ --outputdir results tests
+robot --variable URL:https://staging.example.com/ --outputdir results tests
 ```
 
-##  Best Practices khi viết Test mới
-
-Dựa trên cấu trúc POM, tuân thủ các quy tắc sau:
-
-1. **Test Suites ở `tests/<feature>/`**: Không đặt file test trong các thư mục kiểu `smoke` hay `regression`. Dùng tag để phân loại.
-2. **Không chứa Locators trong Tests/Keywords**: Mọi CSS Selectors / XPaths phải được định nghĩa tại `resources/pages/*_page.robot`.
-3. **Phân biệt rạch ròi Page và Keyword**: 
-   - `pages`: Chứa các tương tác đơn lẻ như `Click Button`, `Input Text`.
-   - `keywords`: Chứa logic nghiệp vụ gọi nhiều hành động từ Page Objects, ví dụ `Login Với Tài Khoản Hợp Lệ`.
-4. **Environment / Data tách biệt**: Để cấu hình vào `config/` và dữ liệu như user accounts vào `testdata/`.
-
-*Ví dụ import cho file test mới:*
-```robot
-*** Settings ***
-Library      SeleniumLibrary
-Resource     ../../resources/config/environment.robot
-Resource     ../../resources/keywords/booking_keywords.robot
-Resource     ../../resources/testdata/booking_data.robot
-```

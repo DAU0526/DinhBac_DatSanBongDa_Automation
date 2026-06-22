@@ -1,4 +1,12 @@
 *** Variables ***
+# Environment Variables
+${URL}                          https://football-booking-system-seven.vercel.app/
+${BROWSER}                      chrome
+${TIMEOUT}                      10s
+${IMPLICIT_WAIT}                5s
+${WAIT_ELEMENT}                 8s
+
+# Test Data
 ${VALID_BOOKING_CODE}           BK123456
 ${INVALID_BOOKING_CODE}         INVALID999
 ${EMPTY_BOOKING_CODE}           ${EMPTY}

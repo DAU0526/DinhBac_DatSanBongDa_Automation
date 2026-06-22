@@ -6,7 +6,7 @@ Documentation       Regression Tests - Lịch sử đặt sân
 Library             SeleniumLibrary
 Resource            ../../resources/keywords/booking_history_keywords.robot
 Resource            ../../resources/keywords/booking_keywords.robot
-Resource            ../../resources/variables/variables.robot
+Resource            ../../resources/common_variables.robot
 
 Suite Setup         Open Browser To Application
 Suite Teardown      Close Browser Application
